@@ -1,0 +1,472 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./style.css" />
+    <style>
+      html {
+        font-size: calc(-0.005825242718446644rem + 1.087378640776699vw);
+      }
+
+      @media screen and (max-width: 1480px) {
+        html {
+          font-size: calc(-0.005825242718446588rem + 1.087378640776699vw);
+        }
+      }
+
+      @media screen and (max-width: 450px) {
+        html {
+          font-size: calc(-0.0022271714922048997rem + 3.5634743875278394vw);
+        }
+      }
+    </style>
+    <title>Franz Wertvollen Art</title>
+  </head>
+  <body>
+    <header class="header">
+      <div class="header__inner">
+        <a href="/" class="header__logo" aria-label="Paintings">
+          <img
+            src="./assets/img/Paintings/icons/paintings-logo.svg"
+            alt="Paintings"
+          />
+        </a>
+
+        <nav class="header__nav" aria-label="Main navigation">
+          <a href="#gallery" class="header__link">GALLERY</a>
+          <a href="#about" class="header__link">ABOUT THE ARTIST</a>
+          <a href="#contact" class="header__link">CONTACT</a>
+        </nav>
+
+        <button
+          class="header__burger"
+          type="button"
+          aria-label="Open menu"
+          aria-expanded="false"
+        >
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+
+      <nav class="mobile-menu" aria-label="Mobile navigation">
+        <a href="#gallery" class="mobile-menu__link">GALLERY</a>
+        <a href="#about" class="mobile-menu__link">ABOUT THE ARTIST</a>
+        <a href="#contact" class="mobile-menu__link">CONTACT</a>
+      </nav>
+    </header>
+
+    <main class="mob:pt-[7.2188rem]">
+      <!--Секция 1-->
+      <section
+        class="bg-[url('./assets/img/Paintings/Paintings-main/paintings-main-1-block-bg.webp')] bg-cover bg-no-repeat pb-[15.75rem] pl-[13.625rem] pt-[15.75rem] mob:bg-[url('./assets/img/Paintings/Paintings-main/paintings-main-1-block-bg-ad.webp')] mob:pb-[15.75rem] mob:pl-[4.375rem] mob:pt-[15.75rem]"
+      >
+        <h1
+          class="h1 mob:Sverdlovsk text-creamy_white mob:text-[3.75rem] mob:tracking-[3%]"
+        >
+          FRANZ <br />
+          WERTVOLLEN <br />
+          ART
+        </h1>
+        <p class="body-header uppercase text-creamy_white mob:pt-[4.225rem]">
+          Artworks mirroring <br />
+          the infinite abyss.
+        </p>
+      </section>
+
+      <!--Секция 2-->
+      <section class="pt-[4.6875rem] mob:pt-[3.188rem]">
+        <!-- Мобильный слайдер -->
+        <div class="desk:hidden">
+          <div
+            id="paintings-carousel"
+            class="relative mx-auto w-full overflow-hidden"
+          >
+            <ul id="paintings-track" class="relative h-[31.5rem] w-full">
+              <li class="painting-slide absolute left-1/2 top-0 w-[29.75rem]">
+                <div class="h-[26.188rem] w-[29.75rem]">
+                  <img
+                    src="./assets/img/Paintings/Paintings-main/paintings-main-2-block-img-1.webp"
+                    alt="Sibilla"
+                    class="h-full w-full object-contain"
+                  />
+                </div>
+
+                <p
+                  class="painting-info body pt-[1.4375rem] text-center text-text_black"
+                >
+                  Sibilla
+                </p>
+
+                <p class="painting-info body-light text-center text-text_black">
+                  Open edition
+                </p>
+              </li>
+
+              <li class="painting-slide absolute left-1/2 top-0 w-[29.75rem]">
+                <div class="h-[26.188rem] w-[29.75rem]">
+                  <img
+                    src="./assets/img/Paintings/Paintings-main/paintings-main-2-block-img-2.webp"
+                    alt="Sibilla"
+                    class="h-full w-full object-contain"
+                  />
+                </div>
+
+                <p
+                  class="painting-info body pt-[1.4375rem] text-center text-text_black"
+                >
+                  Sibilla
+                </p>
+
+                <p class="painting-info body-light text-center text-text_black">
+                  Open edition
+                </p>
+              </li>
+
+              <li class="painting-slide absolute left-1/2 top-0 w-[29.75rem]">
+                <div class="h-[26.188rem] w-[29.75rem]">
+                  <img
+                    src="./assets/img/Paintings/Paintings-main/paintings-main-2-block-img-3.webp"
+                    alt="Gerhard"
+                    class="h-full w-full object-contain"
+                  />
+                </div>
+
+                <p
+                  class="painting-info body pt-[1.4375rem] text-center text-text_black"
+                >
+                  Gerhard
+                </p>
+
+                <p class="painting-info body-light text-center text-text_black">
+                  Open edition
+                </p>
+              </li>
+
+              <li class="painting-slide absolute left-1/2 top-0 w-[29.75rem]">
+                <div class="h-[26.188rem] w-[29.75rem]">
+                  <img
+                    src="./assets/img/Paintings/Paintings-main/paintings-main-2-block-img-4.webp"
+                    alt="Sibilla"
+                    class="h-full w-full object-contain"
+                  />
+                </div>
+
+                <p
+                  class="painting-info body pt-[1.4375rem] text-center text-text_black"
+                >
+                  Sibilla
+                </p>
+
+                <p class="painting-info body-light text-center text-text_black">
+                  Open edition
+                </p>
+              </li>
+            </ul>
+          </div>
+          <div class="flex justify-center desk:hidden">
+            <a
+              href=""
+              class="btn-arrow flex shrink-0 justify-end pb-[0.775rem] pl-12 pr-12 pt-[0.775rem] text-black mob:w-fit mob:justify-center"
+              ><span>TO THE GALLERY</span>
+              <svg
+                width="1.75rem"
+                height="0.5rem"
+                viewBox="0 0 28 8"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M27.3536 4.03556C27.5488 3.8403 27.5488 3.52372 27.3536 3.32845L24.1716 0.146473C23.9763 -0.0487893 23.6597 -0.0487893 23.4645 0.146473C23.2692 0.341735 23.2692 0.658318 23.4645 0.85358L26.2929 3.68201L23.4645 6.51043C23.2692 6.7057 23.2692 7.02228 23.4645 7.21754C23.6597 7.4128 23.9763 7.4128 24.1716 7.21754L27.3536 4.03556ZM0 3.68201L0 4.18201L27 4.18201V3.68201V3.18201L0 3.18201L0 3.68201Z"
+                  fill="#1E1C1A"
+                />
+              </svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- Десктопный слайдер -->
+        <div class="paintings-slider mob:hidden">
+          <ul class="paintings-slider__track flex gap-[5.3125rem]">
+            <li class="paintings-slider__slide">
+              <div class="h-[36.625rem] w-[29.625rem]">
+                <img
+                  src="./assets/img/Paintings/Paintings-main/paintings-main-2-block-img-1.webp"
+                  alt="Sibilla"
+                  class="h-full w-full object-contain"
+                />
+              </div>
+
+              <p class="body pt-[1.4375rem] text-center text-text_black">
+                Sibilla
+              </p>
+              <p class="body-light text-center text-text_black">Open edition</p>
+            </li>
+
+            <li class="paintings-slider__slide">
+              <div class="h-[36.625rem] w-[29.625rem]">
+                <img
+                  src="./assets/img/Paintings/Paintings-main/paintings-main-2-block-img-2.webp"
+                  alt="Sibilla"
+                  class="h-full w-full object-contain"
+                />
+              </div>
+
+              <p class="body pt-[1.4375rem] text-center text-text_black">
+                Sibilla
+              </p>
+              <p class="body-light text-center text-text_black">Open edition</p>
+            </li>
+
+            <li class="paintings-slider__slide">
+              <div class="h-[36.625rem] w-[29.625rem]">
+                <img
+                  src="./assets/img/Paintings/Paintings-main/paintings-main-2-block-img-3.webp"
+                  alt="Gerhard"
+                  class="h-full w-full object-contain"
+                />
+              </div>
+
+              <p class="body pt-[1.4375rem] text-center text-text_black">
+                Gerhard
+              </p>
+              <p class="body-light text-center text-text_black">Open edition</p>
+            </li>
+
+            <li class="paintings-slider__slide">
+              <div class="h-[36.625rem] w-[29.625rem]">
+                <img
+                  src="./assets/img/Paintings/Paintings-main/paintings-main-2-block-img-4.webp"
+                  alt="Sibilla"
+                  class="h-full w-full object-contain"
+                />
+              </div>
+
+              <p class="body pt-[1.4375rem] text-center text-text_black">
+                Sibilla
+              </p>
+              <p class="body-light text-center text-text_black">Open edition</p>
+            </li>
+          </ul>
+        </div>
+        <div class="flex justify-end pt-[3.75rem] mob:hidden">
+          <a
+            href=""
+            class="btn-arrow flex shrink-0 justify-end pb-[0.775rem] pl-12 pr-12 pt-[0.775rem] text-black mob:w-fit mob:justify-center"
+            ><span>TO THE GALLERY</span>
+            <svg
+              class="h-[0.5rem] w-[7.125rem]"
+              viewBox="0 0 114 8"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M113.354 4.03556C113.549 3.8403 113.549 3.52372 113.354 3.32845L110.172 0.146473C109.976 -0.0487893 109.66 -0.0487893 109.464 0.146473C109.269 0.341735 109.269 0.658318 109.464 0.85358L112.293 3.68201L109.464 6.51043C109.269 6.7057 109.269 7.02228 109.464 7.21754C109.66 7.4128 109.976 7.4128 110.172 7.21754L113.354 4.03556ZM0 3.68201L0 4.18201L113 4.18201V3.68201V3.18201L0 3.18201L0 3.68201Z"
+              />
+            </svg>
+          </a>
+        </div>
+      </section>
+
+      <!--Секция 3-->
+      <section
+        class="bg-[url('assets/img/Paintings/Paintings-main/paintings-main-3-block-bg.svg')] bg-[size:100%_10.363rem] bg-bottom bg-no-repeat mob:bg-[url('assets/img/Paintings/Paintings-main/paintings-main-3-block-bg-ad.svg')] mob:bg-[size:100%_13.8125rem] mob:bg-bottom"
+      >
+        <div
+          class="flex gap-20 pb-[2.275rem] pl-[24.875rem] pt-[5.625rem] mob:flex-col mob:gap-[0.8rem] mob:pl-10"
+        >
+          <h2 class="h1 mob:h2 text-text_black">
+            Explore <br />
+            <span class="h2 text-white">collections:</span>
+          </h2>
+          <div
+            class="body-light flex flex-col gap-2 mob:pl-[0.625rem] desk:pt-[8.25rem]"
+          >
+            <p class="text-text_black">• FEMALE DEMONS</p>
+            <p class="text-text_black">• LIMITED EDITIONS</p>
+            <p class="text-text_black">• OPEN EDITIONS</p>
+          </div>
+        </div>
+      </section>
+
+      <!--Секция 4 -->
+      <section class="mob:flex mob:flex-col mob:items-center">
+        <div
+          class="flex gap-8 pb-[5.75rem] pl-[20rem] pt-[8.3125rem] mob:pb-[3.25rem] mob:pl-5 mob:pr-5 mob:pt-12"
+        >
+          <div class="flex shrink-0 pt-[6.038rem]">
+            <img
+              src="./assets/img/Paintings/Paintings-main/paintings-main-4-block-cite-icon.svg"
+              alt=""
+              class="h-4 w-6"
+            />
+          </div>
+          <blockquote>
+            <div
+              class="flex gap-[2.6875rem] pb-3 mob:flex-col mob:gap-[0.5rem] mob:pb-[1.775rem]"
+            >
+              <cite class="h2 uppercase not-italic text-text_black"
+                >Franz wertvollen</cite
+              >
+              <p class="body-light text-text_black desk:pt-[1.125rem]">
+                — Writer, philosopher <br />
+                and visual artist
+              </p>
+            </div>
+            <div class="flex flex-col desk:gap-5">
+              <p class="body text-text_black">
+                Art should show you how splendid life can truly be.
+              </p>
+              <p class="body-light text-text_black">
+                It ought to take you, drag you out of the slimy mire of your
+                skull, <br class="mob:hidden" />
+                and unfold your soul so you can see: ’My God! I have so much
+                <br class="mob:hidden" />
+                room to grow. Now I see what heights are out there for me. I
+                <br class="mob:hidden" />
+                never imagined one could feel so free!’
+              </p>
+              <p class="body-light text-text_black mob:pt-[1.175rem]">
+                Yet art makes demands. You need to engage your heart”.
+              </p>
+            </div>
+          </blockquote>
+        </div>
+        <a
+          href=""
+          class="btn-arrow flex w-full shrink-0 justify-end pb-[0.775rem] pl-12 pr-12 pt-[0.775rem] text-white mob:w-fit mob:justify-center"
+          ><span>MEET THE ARTIST</span>
+          <svg
+            class="h-[0.5rem] w-[7.125rem] mob:hidden"
+            viewBox="0 0 114 8"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M113.354 4.03556C113.549 3.8403 113.549 3.52372 113.354 3.32845L110.172 0.146473C109.976 -0.0487893 109.66 -0.0487893 109.464 0.146473C109.269 0.341735 109.269 0.658318 109.464 0.85358L112.293 3.68201L109.464 6.51043C109.269 6.7057 109.269 7.02228 109.464 7.21754C109.66 7.4128 109.976 7.4128 110.172 7.21754L113.354 4.03556ZM0 3.68201L0 4.18201L113 4.18201V3.68201V3.18201L0 3.18201L0 3.68201Z"
+            />
+          </svg>
+          <svg
+            class="desk:hidden"
+            width="1.75rem"
+            height="0.5rem"
+            viewBox="0 0 28 8"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M27.3536 4.03544C27.5488 3.84018 27.5488 3.52359 27.3536 3.32833L24.1716 0.146351C23.9763 -0.0489113 23.6597 -0.0489113 23.4645 0.146351C23.2692 0.341613 23.2692 0.658195 23.4645 0.853458L26.2929 3.68188L23.4645 6.51031C23.2692 6.70557 23.2692 7.02216 23.4645 7.21742C23.6597 7.41268 23.9763 7.41268 24.1716 7.21742L27.3536 4.03544ZM0 3.68188L0 4.18188L27 4.18188V3.68188V3.18188L0 3.18188L0 3.68188Z"
+              fill="white"
+            />
+          </svg>
+        </a>
+      </section>
+
+      <!--Секция 5 -->
+      <section class="pt-[4.6875rem] mob:pt-[2.488rem]">
+        <div
+          class="flex bg-[url('assets/img/Paintings/Paintings-main/paintings-main-5-block-bg.svg')] bg-[size:100%_17.5625rem] bg-top bg-no-repeat mob:flex-col"
+        >
+          <div class="flex w-[38.7rem] shrink-0 mob:w-full">
+            <img
+              src="./assets/img/Paintings/Paintings-main/paintings-main-5-block-img.webp"
+              alt=""
+              class="w-full mob:hidden"
+            />
+            <img
+              src="./assets/img/Paintings/Paintings-main/paintings-main-5-block-img-ad.webp"
+              class="h-[58.5rem] w-full desk:hidden"
+              alt=""
+            />
+          </div>
+          <div
+            class="w-full bg-contain mob:bg-[url('assets/img/Paintings/Paintings-main/paintings-main-5-block-bg-ad.svg')] mob:bg-no-repeat"
+          >
+            <div
+              class="flex flex-col gap-[1.75rem] pb-[12.25rem] pl-[7.5rem] pt-[12.25rem] mob:gap-0 mob:pb-10 mob:pl-5 mob:pr-5 mob:pt-20"
+            >
+              <h2 class="h1 mob:h2 text-text_black">
+                FOR <br />
+                COLLECTORS
+              </h2>
+              <ul
+                class="flex flex-col gap-[2.65rem] pb-3 pl-[1.875rem] mob:gap-[1.05rem] mob:pb-10"
+              >
+                <li class="flex flex-col">
+                  <p class="h3 h-[3.625rem] text-text_black">
+                    <span class="pr-[1.475rem]">•</span>LIMITID editions
+                  </p>
+                  <p class="body-light pl-[2.9rem] text-text_black">
+                    Signed, individually numbered editions produced in <br />
+                    museum-quality archival print.
+                  </p>
+                </li>
+                <li class="flex flex-col">
+                  <p class="h3 text-text_black desk:h-[3.625rem]">
+                    <span class="pr-[1.475rem]">•</span>Large-Format
+                    <span class="mob:pl-[2.6rem]">Editions</span>
+                  </p>
+                  <p class="body-light pl-[2.9rem] text-text_black">
+                    Statement-scale works created for residential and interior
+                    <br class="mob:hidden" />
+                    spaces.
+                  </p>
+                </li>
+              </ul>
+              <div class="mob:flex mob:justify-center">
+                <a href="" class="btn"><span>explore the gallery</span></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer class="footer">
+      <div class="footer-logo-wrapper">
+        <img
+          src="./assets/img/Paintings/icons/paintings-logo.svg"
+          class="footer-logo-img"
+          alt=""
+        />
+        <div class="footer-logo-line"></div>
+      </div>
+      <div class="footer-links-wrapper">
+        <ul class="footer-links-ul">
+          <li>
+            <a href="" class="footer-link text-text_black">collaboration</a>
+          </li>
+          <li>
+            <a href="" class="footer-link text-text_black"
+              >Trade / Interior Designers</a
+            >
+          </li>
+          <li>
+            <a href="" class="footer-link text-text_black">Limited Editions</a>
+          </li>
+        </ul>
+        <ul class="footer-links-ul">
+          <li>
+            <a href="" class="footer-link text-text_black"
+              >Shipping & Delivery</a
+            >
+          </li>
+          <li><a href="" class="footer-link text-text_black">CONTACT</a></li>
+          <li>
+            <a href="" class="footer-link text-text_black"
+              >Care / Framing Guide</a
+            >
+          </li>
+          <li>
+            <a href="" class="footer-link text-text_black">HOW WE PRINT</a>
+          </li>
+        </ul>
+      </div>
+      <p class="footer-year text-white">© 2026, Franz Wertvollen</p>
+    </footer>
+    <script src="./mob-slider.js"></script>
+    <script src="./main-page-2section-slider.js"></script>
+    <script src="./burger-menu.js"></script>
+  </body>
+</html>

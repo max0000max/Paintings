@@ -1,0 +1,1076 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  @font-face {
+    font-family: 'Sverdlovsk';
+    src: url('./assets/fonts/SverdlovskRegular.woff2') format('woff2');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'Montserrat';
+    src: url('./assets/fonts/Montserrat-Regular.woff2') format('woff2');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'Montserrat';
+    src: url('./assets/fonts/Montserrat-ExtraLight.woff2') format('woff2');
+    font-weight: 200;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'Montserrat';
+    src: url('./assets/fonts/Montserrat-Light.woff2') format('woff2');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'Montserrat';
+    src: url('./assets/fonts/Montserrat-Medium.woff2') format('woff2');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+  }
+}
+
+@layer components {
+  :root {
+    --gold: #e0cc7f;
+    --white: #ffffff;
+    --black: #000000;
+    --text_black: #1e1c1a;
+    --creamy_white: #faf6f0;
+    --gray: #9a9a9a;
+    --dark_red: #980109;
+    --gold_600: #d3bd66;
+    --gold_700: #baa75a;
+    --gold_300: #f5e5a3;
+    --gray_200: #efefef;
+  }
+
+  body {
+    background-color: var(--creamy_white);
+  }
+
+  /* Анимация появления */
+  .animated-element {
+    opacity: 0;
+    transform: translateY(-15%);
+    transition:
+      transform 1s,
+      opacity 1s;
+  }
+  .animated-element.in-view {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /*Начало header*/
+  .header {
+    z-index: 100;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 7.25rem; /* 116px */
+    padding: 1.5rem 6.25rem 1.5rem 6.25rem;
+    background: var(--gold);
+    transform: translateY(0);
+    transition: transform 0.35s ease;
+  }
+
+  .header.is-hidden {
+    transform: translateY(-100%);
+  }
+
+  .header__inner {
+    position: relative;
+    z-index: 2;
+
+    display: flex;
+    align-items: center;
+
+    width: 100%;
+    max-width: 77.25rem;
+    height: 100%;
+  }
+
+  /* =========================
+   LOGO
+   ========================= */
+
+  .header__logo {
+    display: flex;
+    align-items: center;
+
+    width: 6.5625rem;
+    flex-shrink: 0;
+  }
+
+  .header__logo img {
+    display: block;
+
+    width: 100%;
+    height: auto;
+  }
+
+  /* =========================
+   DESKTOP NAVIGATION
+   ========================= */
+
+  .header__nav {
+    display: flex;
+    align-items: center;
+
+    gap: 3.25rem;
+    padding-left: 9.25rem;
+  }
+
+  .header__link {
+    color: var(--text_black);
+
+    font-family: 'Montserrat';
+    font-size: 1rem;
+    letter-spacing: 3%;
+    line-height: auto;
+    font-weight: 400;
+
+    text-decoration: none;
+    white-space: nowrap;
+
+    transition: opacity 0.2s ease;
+  }
+
+  .header__link:hover {
+    color: var(--white);
+  }
+
+  /* =========================
+   BURGER
+   ========================= */
+
+  .header__burger {
+    position: relative;
+
+    display: none;
+
+    width: 2rem;
+    height: 1.625rem;
+
+    padding: 0;
+    border: 0;
+
+    background: transparent;
+
+    cursor: pointer;
+
+    /* Важно: кнопка находится выше меню */
+    z-index: 10;
+  }
+
+  .header__burger span {
+    position: absolute;
+    left: 0;
+
+    width: 100%;
+    height: 0.125rem;
+
+    background: var(--white);
+
+    transform-origin: center;
+
+    transition:
+      top 0.3s ease,
+      transform 0.3s ease,
+      opacity 0.2s ease;
+  }
+
+  /* Положение полосок */
+
+  .header__burger span:nth-child(1) {
+    top: 0;
+  }
+
+  .header__burger span:nth-child(2) {
+    top: 0.6875rem;
+  }
+
+  .header__burger span:nth-child(3) {
+    top: 1.375rem;
+  }
+
+  /* =========================
+   BURGER -> CROSS
+   ========================= */
+
+  .header__burger.is-active span:nth-child(1) {
+    top: 0.6875rem;
+    transform: rotate(45deg);
+  }
+
+  .header__burger.is-active span:nth-child(2) {
+    opacity: 0;
+  }
+
+  .header__burger.is-active span:nth-child(3) {
+    top: 0.6875rem;
+    transform: rotate(-45deg);
+  }
+
+  /* =========================
+   MOBILE MENU
+   ========================= */
+
+  .mobile-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    width: 100%;
+    padding: 2rem 2rem 2.5rem;
+
+    background: var(--gold);
+
+    /*
+   * Начальное состояние
+   */
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+
+    transform: translateY(-1rem);
+
+    transition:
+      opacity 0.35s ease,
+      transform 0.4s ease,
+      visibility 0.4s ease;
+  }
+
+  /* =========================
+   OPEN MENU
+   ========================= */
+
+  .mobile-menu.is-open {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+
+    transform: translateY(0);
+  }
+
+  /* =========================
+   MOBILE LINKS
+   ========================= */
+
+  .mobile-menu__link {
+    display: block;
+
+    width: 100%;
+    padding: 1rem 0;
+
+    color: var(--text_black);
+
+    font-family: 'Montserrat';
+    font-size: 1rem;
+    letter-spacing: 3%;
+    line-height: auto;
+    font-weight: 400;
+
+    text-align: center;
+    text-decoration: none;
+
+    opacity: 0;
+    transform: translateY(-0.5rem);
+
+    transition:
+      opacity 0.3s ease,
+      transform 0.3s ease;
+  }
+
+  /* Анимация пунктов */
+
+  .mobile-menu.is-open .mobile-menu__link {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .mobile-menu.is-open .mobile-menu__link:nth-child(1) {
+    transition-delay: 0.08s;
+  }
+
+  .mobile-menu.is-open .mobile-menu__link:nth-child(2) {
+    transition-delay: 0.16s;
+  }
+
+  .mobile-menu.is-open .mobile-menu__link:nth-child(3) {
+    transition-delay: 0.24s;
+  }
+
+  /* =========================
+   MOBILE
+   ========================= */
+
+  @media (max-width: 450px) {
+    .header {
+      padding: 1.5rem 2rem 1.5rem 2rem;
+    }
+
+    .header__inner {
+      justify-content: space-between;
+    }
+
+    .header__logo {
+      width: 6.25rem;
+    }
+
+    .header__nav {
+      display: none;
+    }
+
+    .header__burger {
+      display: block;
+    }
+  }
+
+  /* =========================
+   DESKTOP
+   ========================= */
+
+  @media (min-width: 451px) {
+    .mobile-menu {
+      display: none;
+    }
+  }
+
+  /*Конец header*/
+
+  /*Начало шрифтов*/
+  .h1 {
+    font-family: 'Sverdlovsk';
+    font-size: 6.25rem;
+    letter-spacing: 4.5%;
+    line-height: normal;
+  }
+
+  .h2 {
+    font-family: 'Sverdlovsk';
+    font-size: 4.625rem;
+    letter-spacing: 7%;
+    line-height: 5.225rem;
+  }
+
+  .h3 {
+    font-family: 'Sverdlovsk';
+    font-size: 3rem;
+    letter-spacing: 3%;
+    line-height: normal;
+  }
+
+  .body {
+    font-family: 'Montserrat';
+    font-size: 1rem;
+    letter-spacing: 3%;
+    line-height: 1.375rem;
+    font-weight: 400;
+  }
+
+  .body-header {
+    font-family: 'Montserrat';
+    font-size: 1rem;
+    letter-spacing: 3%;
+    line-height: auto;
+    font-weight: 400;
+  }
+
+  .body-light {
+    font-family: 'Montserrat';
+    font-size: 1rem;
+    letter-spacing: 3%;
+    line-height: 1.375rem;
+    font-weight: 200;
+  }
+
+  .body-heder-light {
+    font-family: 'Montserrat';
+    font-size: 1rem;
+    letter-spacing: 3%;
+    line-height: 1.375rem;
+    font-weight: 300;
+  }
+
+  .body-medium {
+    font-family: 'Montserrat';
+    font-size: 1rem;
+    letter-spacing: 3%;
+    line-height: 1.375rem;
+    font-weight: 500;
+  }
+
+  /*Конец шрифтов*/
+
+  /*Начало кнопок*/
+
+  /*Начало btn*/
+  .btn {
+    padding-left: 2.25rem;
+    padding-right: 2.25rem;
+    background-color: var(--gold);
+    color: var(--white);
+    width: fit-content;
+
+    padding-top: 0.575rem;
+    padding-bottom: 0.575rem;
+    font-family: 'Sverdlovsk';
+    font-size: 3rem;
+    letter-spacing: 3%;
+    text-transform: uppercase;
+    line-height: normal;
+  }
+
+  .btn:hover {
+    background-color: var(--gold_600);
+  }
+
+  .btn:active {
+    background-color: var(--gold_700);
+  }
+
+  .btn:disabled {
+    background-color: var(--gold_300);
+  }
+
+  .btn:disabled:hover,
+  .btn:disabled:active {
+    transform: none;
+    cursor: not-allowed;
+  }
+
+  .btn > span {
+    top: 0.35rem;
+    position: relative;
+  }
+  /*Конец btn*/
+
+  /*Начало btn-next*/
+  .btn-next {
+    padding-left: 2.25rem;
+    padding-right: 2.25rem;
+    background-color: var(--gold);
+    color: var(--white);
+    width: fit-content;
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+
+    padding-top: 0.575rem;
+    padding-bottom: 0.575rem;
+    font-family: 'Sverdlovsk';
+    font-size: 3rem;
+    letter-spacing: 3%;
+    text-transform: uppercase;
+    line-height: normal;
+  }
+
+  .btn-next > span {
+    top: 0.35rem;
+    position: relative;
+  }
+
+  .btn-next:hover {
+    background-color: var(--gold_600);
+  }
+
+  .btn-next:active {
+    background-color: var(--gold_700);
+  }
+
+  .btn-next:disabled {
+    background-color: var(--gold_300);
+  }
+
+  .btn-next:disabled:hover,
+  .btn-next:disabled:active {
+    transform: none;
+    cursor: not-allowed;
+  }
+
+  .btn-next > span {
+    top: 0.3rem;
+    position: relative;
+  }
+  /*Конец btn-next*/
+
+  /*Начало btn-arrow*/
+  .btn-arrow {
+    display: inline-flex;
+    gap: 1.5625rem;
+    align-items: center;
+    justify-content: center;
+    width: fit-content;
+
+    padding-top: 0.575rem;
+    padding-bottom: 0.575rem;
+    padding-left: 2.25rem;
+    padding-right: 2.25rem;
+    background-color: var(--gold);
+    color: var(--text_black);
+
+    font-family: 'Sverdlovsk';
+    font-size: 3rem;
+    letter-spacing: 3%;
+    line-height: normal;
+    text-transform: uppercase;
+  }
+
+  .btn-arrow > svg {
+    fill: currentColor;
+  }
+
+  .btn-arrow > svg {
+    top: 0.1rem;
+    position: relative;
+  }
+
+  .btn-arrow > span {
+    top: 0.3rem;
+    position: relative;
+  }
+
+  .btn-arrow:hover {
+    background-color: var(--gold_600);
+  }
+
+  .btn-arrow:active {
+    background-color: var(--gold_700);
+  }
+
+  .btn-arrow:disabled {
+    background-color: var(--gold_300);
+  }
+
+  .btn-arrow:disabled:hover,
+  .btn-arrow:disabled:active {
+    transform: none;
+    cursor: not-allowed;
+  }
+
+  .btn-arrow > img {
+    width: 7.0625rem;
+  }
+
+  @media (max-width: 450px) {
+    .btn-arrow {
+      padding: 0.9375rem 3rem 0.9375rem 3rem;
+    }
+
+    .btn-arrow > img {
+      width: 1.75rem;
+    }
+  }
+  /*Конец btn-arrow*/
+
+  /*Конец кнопок*/
+
+  /*Начало footer*/
+  .footer {
+    background-color: var(--gold);
+    padding-bottom: 1.875rem;
+    padding-top: 7.25rem;
+  }
+
+  .footer-logo-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 5rem;
+    padding-left: 5rem;
+  }
+
+  .footer-logo-img {
+    height: 4.25rem;
+    width: 6.5625rem;
+  }
+
+  .footer-logo-line {
+    height: 1px;
+    background-color: var(--white);
+    width: 100%;
+  }
+
+  .footer-links-wrapper {
+    display: flex;
+    gap: 2.5rem;
+    justify-content: end;
+    padding-right: 12.5rem;
+    padding-top: 2.625rem;
+  }
+
+  .footer-links-ul {
+    display: flex;
+    flex-direction: column;
+    gap: 0.375rem;
+    text-transform: uppercase;
+    text-align: end;
+
+    font-family: 'Montserrat';
+    font-size: 1rem;
+    letter-spacing: 3%;
+    line-height: auto;
+    font-weight: 400;
+  }
+
+  .footer-link:hover {
+    color: var(--white);
+  }
+
+  .footer-year {
+    font-family: 'Montserrat';
+    font-size: 1rem;
+    letter-spacing: 3%;
+    font-weight: 400;
+
+    text-transform: uppercase;
+    text-align: center;
+    padding-top: 2.625rem;
+  }
+
+  @media (max-width: 450px) {
+    .footer {
+      padding-top: 2.875rem;
+    }
+    .footer-logo-wrapper {
+      gap: 2.5rem;
+      padding-left: 2.5rem;
+    }
+    .footer-links-wrapper {
+      flex-direction: column;
+      padding-right: 2.5rem;
+      padding-top: 2.25rem;
+      gap: 2.5rem;
+    }
+
+    .footer-year {
+      padding-top: 2.25rem;
+    }
+  }
+
+  /*Конец footer*/
+
+  .label {
+    font-family: 'Montserrat';
+    font-size: 1rem;
+    letter-spacing: 3%;
+    line-height: 1.375rem;
+    font-weight: 200;
+  }
+
+  .dropdown {
+    position: relative;
+    font-family: 'Montserrat';
+    font-size: 1rem;
+    letter-spacing: 3%;
+    line-height: 1.375rem;
+    font-weight: 200;
+    border: 0.0313rem solid rgb(30, 28, 26, 50%);
+    outline: none;
+    width: fit-content;
+  }
+
+  .dropdown-toggle {
+    position: relative;
+    width: 25.45rem;
+    height: 3rem;
+    padding: 0.75rem 1rem 0.75rem 0.75rem;
+
+    background-color: transparent;
+    color: var(--text_black);
+
+    cursor: pointer;
+    transition:
+      border-color 0.2s ease,
+      background-color 0.2s ease;
+
+    display: flex;
+    justify-content: space-between;
+    text-align: left;
+    align-items: center;
+  }
+
+  .dropdown-list {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 25.575rem;
+    background: var(--white);
+    list-style: none;
+    padding: 0;
+    z-index: 1000;
+    box-shadow:
+      0 0.0625rem 0.25rem 0 rgba(12, 12, 13, 0.05),
+      0 0.0625rem 0.25rem 0 rgba(12, 12, 13, 0.1);
+  }
+
+  .dropdown.open .dropdown-list {
+    display: block;
+  }
+
+  .dropdown-item {
+    padding: 0.75rem 1.25rem;
+    position: relative;
+    cursor: pointer;
+    transition: background 0.2s;
+  }
+
+  .dropdown-item:hover {
+    background-color: var(--gray_200);
+  }
+
+  .dropdown-item.selected::after {
+    content: '';
+    position: absolute;
+    right: 0.75rem;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 1.5rem;
+    height: 1.5rem;
+    background-image: url("data:image/svg+xml,%3Csvg width='1.5rem' height='1.5rem' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M19.7938 4.8583C19.8722 4.74481 20.0279 4.71578 20.1415 4.79385C20.255 4.87218 20.284 5.02791 20.2059 5.1415L9.68152 18.3896L3.82215 12.4862C3.72509 12.3882 3.72617 12.2299 3.8241 12.1327C3.92209 12.0357 4.08041 12.0358 4.17761 12.1337L9.61218 17.6103L19.7938 4.8583Z' fill='%231E1C1A'/%3E%3C/svg%3E");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+
+  /* FOCUS (фокус) */
+  .dropdown.focus {
+    border: 0.0313rem solid rgb(30, 28, 26, 50%);
+    color: var(--text_black);
+  }
+
+  .select-field--error.focus {
+    border: 0.0313rem solid rgb(30, 28, 26, 50%);
+  }
+
+  /* ERROR (ошибка валидации) */
+  .dropdown.error .dropdown-toggle {
+    border-color: var(--dark_red);
+  }
+
+  .dropdown.error .error-message {
+    display: block;
+    color: var(--dark_red);
+    font-size: 0.75rem;
+    font-family: 'Montserrat';
+    letter-spacing: 3%;
+    font-weight: 200;
+    line-height: 1rem;
+  }
+
+  .dropdown .error-message {
+    display: none;
+  }
+
+  /* EMPTY (пустое значение, не выбрано) */
+  .dropdown-toggle.empty {
+    color: var(--gray);
+  }
+
+  .dropdown.empty::after {
+    content: 'Choose one of the variants';
+    color: var(--dark_red);
+    font-size: 0.75rem;
+    font-family: 'Montserrat';
+    letter-spacing: 3%;
+    font-weight: 200;
+  }
+
+  /* DISABLED (отключено) */
+  .dropdown.disabled .dropdown-toggle {
+    border: 0.0313rem solid rgb(154, 154, 154);
+    color: var(--gray);
+    cursor: not-allowed;
+    pointer-events: none; /* Запрещает клики */
+  }
+
+  /* Disabled label */
+  label.disabled {
+    color: var(--gray);
+    cursor: not-allowed;
+    pointer-events: none; /* Запрещает клик по label */
+  }
+
+  /* Визуальная связь disabled dropdown и label */
+  .dropdown.disabled + label,
+  .dropdown.disabled ~ label,
+  label.disabled {
+    color: var(--gray);
+  }
+
+  .dropdown.disabled .dropdown-arrow {
+    opacity: 0.5;
+  }
+
+  /* READ_ONLY (только чтение) */
+  .dropdown.read-only .dropdown-toggle {
+    background-color: #f8f9fa;
+    color: #495057;
+    cursor: default;
+    pointer-events: none; /* Запрещает изменение, но можно читать */
+  }
+
+  .dropdown.read-only .dropdown-arrow {
+    opacity: 0.5;
+  }
+
+  /* SELECTED (выбранный item) */
+  .dropdown-item.selected {
+    color: var(--text_black);
+  }
+
+  /* Отключаем item */
+  .dropdown-item.disabled {
+    color: #999;
+    cursor: not-allowed;
+    pointer-events: none;
+  }
+
+  .dropdown-item.disabled:hover {
+    background-color: transparent;
+  }
+
+  /* Стили для скрытого input (не обязательны, но для ясности) */
+  input[type='hidden'] {
+    display: none;
+  }
+
+  /* Empty: выбрана placeholder-опция */
+  .select:required:invalid {
+    color: var(--gray);
+  }
+
+  /* Error */
+  .select-field--error {
+    border: 0.0625rem solid var(--dark_red);
+  }
+
+  .select-error {
+    display: none;
+    color: var(--dark_red);
+    font-size: 0.75rem;
+    line-height: 1rem;
+    letter-spacing: 3%;
+    font-weight: 200;
+  }
+
+  .select.select--error:focus,
+  .select:invalid:focus {
+    border-width: 0.0313rem;
+    border-style: solid;
+    border-color: var(--dark_red);
+  }
+
+  .select-field--error .select-error {
+    display: block;
+  }
+
+  .select-error:not([hidden]) {
+    display: block;
+  }
+
+  .select:invalid {
+    border-color: var(--dark_red);
+  }
+
+  /* Disabled */
+  .select:disabled {
+    color: var(--gray);
+    border-color: var(--gray);
+    cursor: not-allowed;
+  }
+
+  /* Read-only — у select нет настоящего readonly */
+  .select--readonly {
+    color: var(--gray);
+    cursor: default;
+    pointer-events: none;
+  }
+
+  /* Выбранный option */
+  .select option:checked {
+    background: #6c5ce7;
+    color: #fff;
+  }
+
+  /* Начало слайдера */
+  .paintings-slider {
+    width: 100%;
+    overflow: hidden;
+    cursor: grab;
+    touch-action: pan-y;
+    user-select: none;
+  }
+
+  .paintings-slider.is-dragging {
+    cursor: grabbing;
+  }
+
+  .paintings-slider__track {
+    width: max-content;
+    will-change: transform;
+    transition: transform 500ms ease;
+  }
+
+  .paintings-slider__slide {
+    flex: 0 0 auto;
+    width: 29.625rem;
+  }
+
+  .paintings-slider__slide img {
+    display: block;
+    pointer-events: none;
+  }
+
+  /* Конец слайдера */
+
+  /* Начало Imagine it... слайдера */
+  .painting-slider {
+    width: 100%;
+    overflow: hidden;
+    touch-action: pan-y;
+    user-select: none;
+    cursor: grab;
+  }
+
+  .painting-slider.is-dragging {
+    cursor: grabbing;
+  }
+
+  .painting-slider__track {
+    width: max-content;
+    align-items: stretch;
+    will-change: transform;
+    transition: transform 500ms ease;
+  }
+
+  .painting-slider__slide {
+    flex: 0 0 auto;
+    height: 38.625rem;
+    align-items: stretch;
+  }
+
+  .painting-slider__slide img {
+    display: block;
+    height: 100%;
+    object-fit: cover;
+    pointer-events: none;
+  }
+
+  /* Конец Imagine it... слайдера */
+
+  /* Начало мобильного слайдера */
+  #paintings-carousel {
+    --slide-width: 18.75rem;
+    --side-offset: 11.5rem;
+    --side-scale: 0.88;
+    --transition: 600ms cubic-bezier(0.22, 1, 0.36, 1);
+  }
+
+  #paintings-track {
+    touch-action: pan-y;
+  }
+
+  .painting-slide {
+    opacity: 0.6;
+    transform: translateX(-50%) translateX(0) scale(var(--side-scale));
+
+    transform-origin: center center;
+
+    transition:
+      transform var(--transition),
+      opacity var(--transition);
+
+    z-index: 1;
+
+    pointer-events: none;
+    user-select: none;
+  }
+
+  .painting-slide.is-active {
+    opacity: 1;
+
+    transform: translateX(-50%) translateX(0) scale(1);
+
+    z-index: 3;
+  }
+
+  .painting-slide.is-prev {
+    opacity: 0.6;
+
+    transform: translateX(-50%) translateX(calc(var(--side-offset) * -1))
+      scale(var(--side-scale));
+
+    z-index: 2;
+  }
+
+  .painting-slide.is-next {
+    opacity: 0.6;
+
+    transform: translateX(-50%) translateX(var(--side-offset))
+      scale(var(--side-scale));
+
+    z-index: 2;
+  }
+
+  .painting-slide.is-hidden-left {
+    opacity: 0;
+
+    transform: translateX(-50%) translateX(calc(var(--side-offset) * -2))
+      scale(0.8);
+
+    z-index: 0;
+  }
+
+  .painting-slide.is-hidden-right {
+    opacity: 0;
+
+    transform: translateX(-50%) translateX(calc(var(--side-offset) * 2))
+      scale(0.8);
+
+    z-index: 0;
+  }
+
+  .painting-info {
+    opacity: 0;
+    visibility: hidden;
+
+    transition:
+      opacity 400ms ease,
+      visibility 400ms ease;
+  }
+
+  .painting-slide.is-active .painting-info {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  /* Конец мобильного слайдера */
+}
+
+@layer utilities {
+  .Sverdlovsk {
+    font-family: 'Sverdlovsk';
+  }
+}
