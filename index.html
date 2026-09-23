@@ -25,25 +25,49 @@
   </head>
   <body>
     <header class="header">
-      <div class="header__inner">
-        <a href="/" class="header__logo" aria-label="Paintings">
-          <img
-            src="./assets/img/Paintings/icons/paintings-logo.svg"
-            alt="Paintings"
-          />
+      <div class="header-wrapper">
+        <a href="/" class="header-logo" aria-label="Paintings — home">
+          <img src="./assets/img/Paintings/icons/paintings-logo.svg" alt="" />
         </a>
 
-        <nav class="header__nav" aria-label="Main navigation">
-          <a href="#gallery" class="header__link">GALLERY</a>
-          <a href="#about" class="header__link">ABOUT THE ARTIST</a>
-          <a href="#contact" class="header__link">CONTACT</a>
+        <nav aria-label="Main navigation" class="header-nav-wrapper">
+          <ul class="header-nav-links">
+            <li><a href="#gallery" class="header-link">GALLERY</a></li>
+            <li><a href="#about" class="header-link">ABOUT THE ARTIST</a></li>
+            <li><a href="#contact" class="header-link">CONTACT</a></li>
+          </ul>
+
+          <div class="header-nav-buttons">
+            <button type="button" aria-label="Search">
+              <img
+                src="./assets/img/Paintings/icons/paintings-lense.svg"
+                alt=""
+                class="h-6 w-6"
+              />
+            </button>
+            <a href="" aria-label="Profile">
+              <img
+                src="./assets/img/Paintings/icons/paintings-user.svg"
+                alt=""
+                class="h-6 w-6"
+              />
+            </a>
+            <a href="" aria-label="Shopping cart">
+              <img
+                src="./assets/img/Paintings/icons/paintings-bag.svg"
+                alt=""
+                class="h-6 w-6"
+              />
+            </a>
+          </div>
         </nav>
 
         <button
-          class="header__burger"
+          class="header-burger"
           type="button"
           aria-label="Open menu"
           aria-expanded="false"
+          aria-controls="mobile-menu"
         >
           <span></span>
           <span></span>
@@ -51,26 +75,79 @@
         </button>
       </div>
 
-      <nav class="mobile-menu" aria-label="Mobile navigation">
-        <a href="#gallery" class="mobile-menu__link">GALLERY</a>
-        <a href="#about" class="mobile-menu__link">ABOUT THE ARTIST</a>
-        <a href="#contact" class="mobile-menu__link">CONTACT</a>
+      <!-- Mobile menu -->
+      <nav
+        aria-label="Mobile navigation"
+        class="mobile-menu-wrapper"
+        id="mobile-menu"
+      >
+        <div class="mobile-menu-inner">
+          <ul class="mobile-menu-list">
+            <li>
+              <a href="#gallery" class="mobile-menu-link">
+                <span class="mobile-menu-link-text">GALLERY</span>
+              </a>
+            </li>
+            <li>
+              <a href="#about" class="mobile-menu-link">
+                <span class="mobile-menu-link-text">ABOUT THE ARTIST</span>
+              </a>
+            </li>
+            <li>
+              <a href="#contact" class="mobile-menu-link">
+                <span class="mobile-menu-link-text">CONTACT</span>
+              </a>
+            </li>
+          </ul>
+
+          <!-- Actions: search, profile, cart -->
+          <div class="mobile-menu-actions">
+            <button type="button" class="mobile-action-btn" aria-label="Search">
+              <img
+                src="./assets/img/Paintings/icons/paintings-lense.svg"
+                alt=""
+                class="mobile-action-icon"
+              />
+              <span class="mobile-action-label">Search</span>
+            </button>
+
+            <a href="" class="mobile-action-btn" aria-label="Profile">
+              <img
+                src="./assets/img/Paintings/icons/paintings-user.svg"
+                alt=""
+                class="mobile-action-icon"
+              />
+              <span class="mobile-action-label">Profile</span>
+            </a>
+
+            <a href="" class="mobile-action-btn" aria-label="Shopping cart">
+              <img
+                src="./assets/img/Paintings/icons/paintings-bag.svg"
+                alt=""
+                class="mobile-action-icon"
+              />
+              <span class="mobile-action-label">Cart</span>
+            </a>
+          </div>
+        </div>
       </nav>
     </header>
 
-    <main class="mob:pt-[7.2188rem]">
+    <main class="bg-creamy_white pt-[7.188rem] mob:pt-[7.2188rem]">
       <!--Секция 1-->
       <section
-        class="bg-[url('./assets/img/Paintings/Paintings-main/paintings-main-1-block-bg.webp')] bg-cover bg-no-repeat pb-[15.75rem] pl-[13.625rem] pt-[15.75rem] mob:bg-[url('./assets/img/Paintings/Paintings-main/paintings-main-1-block-bg-ad.webp')] mob:pb-[15.75rem] mob:pl-[4.375rem] mob:pt-[15.75rem]"
+        class="bg-[url('./assets/img/Paintings/Paintings-main/paintings-main-1-block-bg.webp')] bg-cover bg-no-repeat pb-[15.75rem] pl-[14.025rem] pt-[16.25rem] mob:bg-[url('./assets/img/Paintings/Paintings-main/paintings-main-1-block-bg-ad.webp')] mob:pb-[15.75rem] mob:pl-[4.375rem] mob:pt-[15.75rem]"
       >
         <h1
-          class="h1 mob:Sverdlovsk text-creamy_white mob:text-[3.75rem] mob:tracking-[3%]"
+          class="animated-element h1 mob:Sverdlovsk text-creamy_white mob:text-[3.75rem] mob:tracking-[3%]"
         >
           FRANZ <br />
           WERTVOLLEN <br />
           ART
         </h1>
-        <p class="body-header uppercase text-creamy_white mob:pt-[4.225rem]">
+        <p
+          class="animated-element body-header pt-[0.5188rem] uppercase text-creamy_white mob:pt-[4.225rem]"
+        >
           Artworks mirroring <br />
           the infinite abyss.
         </p>
@@ -169,7 +246,7 @@
           <div class="flex justify-center desk:hidden">
             <a
               href=""
-              class="btn-arrow flex shrink-0 justify-end pb-[0.775rem] pl-12 pr-12 pt-[0.775rem] text-black mob:w-fit mob:justify-center"
+              class="animated-element btn-arrow flex shrink-0 justify-end pb-[0.775rem] pl-12 pr-12 pt-[0.775rem] text-black mob:w-fit mob:justify-center"
               ><span>TO THE GALLERY</span>
               <svg
                 width="1.75rem"
@@ -189,9 +266,9 @@
 
         <!-- Десктопный слайдер -->
         <div class="paintings-slider mob:hidden">
-          <ul class="paintings-slider__track flex gap-[5.3125rem]">
+          <ul class="paintings-slider__track flex gap-[6.313rem]">
             <li class="paintings-slider__slide">
-              <div class="h-[36.625rem] w-[29.625rem]">
+              <div class="h-[37.925rem] w-[30.625rem]">
                 <img
                   src="./assets/img/Paintings/Paintings-main/paintings-main-2-block-img-1.webp"
                   alt="Sibilla"
@@ -206,7 +283,7 @@
             </li>
 
             <li class="paintings-slider__slide">
-              <div class="h-[36.625rem] w-[29.625rem]">
+              <div class="h-[37.925rem] w-[30.625rem]">
                 <img
                   src="./assets/img/Paintings/Paintings-main/paintings-main-2-block-img-2.webp"
                   alt="Sibilla"
@@ -221,7 +298,7 @@
             </li>
 
             <li class="paintings-slider__slide">
-              <div class="h-[36.625rem] w-[29.625rem]">
+              <div class="h-[37.925rem] w-[30.625rem]">
                 <img
                   src="./assets/img/Paintings/Paintings-main/paintings-main-2-block-img-3.webp"
                   alt="Gerhard"
@@ -236,7 +313,7 @@
             </li>
 
             <li class="paintings-slider__slide">
-              <div class="h-[36.625rem] w-[29.625rem]">
+              <div class="h-[37.925rem] w-[30.625rem]">
                 <img
                   src="./assets/img/Paintings/Paintings-main/paintings-main-2-block-img-4.webp"
                   alt="Sibilla"
@@ -251,10 +328,10 @@
             </li>
           </ul>
         </div>
-        <div class="flex justify-end pt-[3.75rem] mob:hidden">
+        <div class="flex justify-end pt-[4.05rem] mob:hidden">
           <a
             href=""
-            class="btn-arrow flex shrink-0 justify-end pb-[0.775rem] pl-12 pr-12 pt-[0.775rem] text-black mob:w-fit mob:justify-center"
+            class="animated-element btn-arrow flex shrink-0 justify-end gap-[2.163rem] py-[0.575rem] pl-[3.2rem] pr-12 text-black mob:w-fit mob:justify-center"
             ><span>TO THE GALLERY</span>
             <svg
               class="h-[0.5rem] w-[7.125rem]"
@@ -272,21 +349,27 @@
 
       <!--Секция 3-->
       <section
-        class="bg-[url('assets/img/Paintings/Paintings-main/paintings-main-3-block-bg.svg')] bg-[size:100%_10.363rem] bg-bottom bg-no-repeat mob:bg-[url('assets/img/Paintings/Paintings-main/paintings-main-3-block-bg-ad.svg')] mob:bg-[size:100%_13.8125rem] mob:bg-bottom"
+        class="bg-[url('assets/img/Paintings/Paintings-main/paintings-main-3-block-bg.svg')] bg-[size:100%_10.863rem] bg-[0rem_11rem] bg-no-repeat mob:bg-[url('assets/img/Paintings/Paintings-main/paintings-main-3-block-bg-ad.svg')] mob:bg-[size:100%_13.8125rem] mob:bg-[0rem_10.7rem]"
       >
         <div
-          class="flex gap-20 pb-[2.275rem] pl-[24.875rem] pt-[5.625rem] mob:flex-col mob:gap-[0.8rem] mob:pl-10"
+          class="flex gap-20 pb-[2.275rem] pl-[25.475rem] pt-[5.625rem] mob:flex-col mob:gap-[1.3rem] mob:pl-10"
         >
-          <h2 class="h1 mob:h2 text-text_black">
+          <h2 class="animated-element h1 mob:h2 text-text_black">
             Explore <br />
             <span class="h2 text-white">collections:</span>
           </h2>
           <div
-            class="body-light flex flex-col gap-2 mob:pl-[0.625rem] desk:pt-[8.25rem]"
+            class="animated-element body-light flex flex-col gap-2 mob:pl-[0.625rem] desk:pt-[8.85rem]"
           >
-            <p class="text-text_black">• FEMALE DEMONS</p>
-            <p class="text-text_black">• LIMITED EDITIONS</p>
-            <p class="text-text_black">• OPEN EDITIONS</p>
+            <p class="text-text_black">
+              • <span class="pl-[0.3rem]">FEMALE DEMONS</span>
+            </p>
+            <p class="text-text_black">
+              • <span class="pl-[0.3rem]">LIMITED EDITIONS</span>
+            </p>
+            <p class="text-text_black">
+              • <span class="pl-[0.3rem]">OPEN EDITIONS</span>
+            </p>
           </div>
         </div>
       </section>
@@ -294,29 +377,32 @@
       <!--Секция 4 -->
       <section class="mob:flex mob:flex-col mob:items-center">
         <div
-          class="flex gap-8 pb-[5.75rem] pl-[20rem] pt-[8.3125rem] mob:pb-[3.25rem] mob:pl-5 mob:pr-5 mob:pt-12"
+          class="flex gap-8 pb-[5.15rem] pl-[20.6rem] pt-[8.3125rem] mob:pb-[3.25rem] mob:pl-5 mob:pr-5 mob:pt-12"
         >
           <div class="flex shrink-0 pt-[6.038rem]">
             <img
               src="./assets/img/Paintings/Paintings-main/paintings-main-4-block-cite-icon.svg"
               alt=""
-              class="h-4 w-6"
+              class="animated-element h-4 w-6"
             />
           </div>
           <blockquote>
             <div
-              class="flex gap-[2.6875rem] pb-3 mob:flex-col mob:gap-[0.5rem] mob:pb-[1.775rem]"
+              class="flex gap-[2.988rem] pb-[0.55rem] mob:flex-col mob:gap-[0.5rem] mob:pb-[1.775rem]"
             >
-              <cite class="h2 uppercase not-italic text-text_black"
+              <cite
+                class="animated-element h2 uppercase not-italic text-text_black"
                 >Franz wertvollen</cite
               >
-              <p class="body-light text-text_black desk:pt-[1.125rem]">
+              <p
+                class="animated-element body-light text-text_black desk:pt-[1.125rem]"
+              >
                 — Writer, philosopher <br />
                 and visual artist
               </p>
             </div>
-            <div class="flex flex-col desk:gap-5">
-              <p class="body text-text_black">
+            <div class="animated-element flex flex-col desk:gap-5">
+              <p class="body capitalize text-text_black">
                 Art should show you how splendid life can truly be.
               </p>
               <p class="body-light text-text_black">
@@ -336,7 +422,7 @@
         </div>
         <a
           href=""
-          class="btn-arrow flex w-full shrink-0 justify-end pb-[0.775rem] pl-12 pr-12 pt-[0.775rem] text-white mob:w-fit mob:justify-center"
+          class="animated-element btn-arrow flex w-full shrink-0 justify-end px-[3.5rem] py-[0.575rem] text-white mob:w-fit mob:justify-center mob:gap-[1.963rem] mob:px-[3.1rem] mob:py-[0.575rem]"
           ><span>MEET THE ARTIST</span>
           <svg
             class="h-[0.5rem] w-[7.125rem] mob:hidden"
@@ -350,14 +436,14 @@
           </svg>
           <svg
             class="desk:hidden"
-            width="1.75rem"
+            width="2.625rem"
             height="0.5rem"
-            viewBox="0 0 28 8"
+            viewBox="0 0 42 8"
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
           >
             <path
-              d="M27.3536 4.03544C27.5488 3.84018 27.5488 3.52359 27.3536 3.32833L24.1716 0.146351C23.9763 -0.0489113 23.6597 -0.0489113 23.4645 0.146351C23.2692 0.341613 23.2692 0.658195 23.4645 0.853458L26.2929 3.68188L23.4645 6.51031C23.2692 6.70557 23.2692 7.02216 23.4645 7.21742C23.6597 7.41268 23.9763 7.41268 24.1716 7.21742L27.3536 4.03544ZM0 3.68188L0 4.18188L27 4.18188V3.68188V3.18188L0 3.18188L0 3.68188Z"
+              d="M41.3536 4.03544C41.5488 3.84018 41.5488 3.52359 41.3536 3.32833L38.1716 0.146351C37.9763 -0.0489113 37.6597 -0.0489113 37.4645 0.146351C37.2692 0.341613 37.2692 0.658195 37.4645 0.853458L40.2929 3.68188L37.4645 6.51031C37.2692 6.70557 37.2692 7.02216 37.4645 7.21742C37.6597 7.41268 37.9763 7.41268 38.1716 7.21742L41.3536 4.03544ZM0 3.68188L0 4.18188L41 4.18188V3.68188V3.18188L0 3.18188L0 3.68188Z"
               fill="white"
             />
           </svg>
@@ -365,9 +451,9 @@
       </section>
 
       <!--Секция 5 -->
-      <section class="pt-[4.6875rem] mob:pt-[2.488rem]">
+      <section class="pt-[4.988rem] mob:pt-[2.488rem]">
         <div
-          class="flex bg-[url('assets/img/Paintings/Paintings-main/paintings-main-5-block-bg.svg')] bg-[size:100%_17.5625rem] bg-top bg-no-repeat mob:flex-col"
+          class="flex bg-[url('assets/img/Paintings/Paintings-main/paintings-main-5-block-bg.svg')] bg-[size:100%_18.163rem] bg-top bg-no-repeat mob:flex-col"
         >
           <div class="flex w-[38.7rem] shrink-0 mob:w-full">
             <img
@@ -382,41 +468,51 @@
             />
           </div>
           <div
-            class="w-full bg-contain mob:bg-[url('assets/img/Paintings/Paintings-main/paintings-main-5-block-bg-ad.svg')] mob:bg-no-repeat"
+            class="w-full bg-contain bg-top mob:bg-[url('./assets/img/Paintings/Paintings-main/paintings-main-5-block-bg-ad.svg')] mob:bg-no-repeat"
           >
             <div
-              class="flex flex-col gap-[1.75rem] pb-[12.25rem] pl-[7.5rem] pt-[12.25rem] mob:gap-0 mob:pb-10 mob:pl-5 mob:pr-5 mob:pt-20"
+              class="flex flex-col gap-[1.75rem] pb-[12.25rem] pl-[7.5rem] pt-[12.55rem] mob:gap-[0.2125rem] mob:pb-10 mob:pl-5 mob:pr-5 mob:pt-[2.4375rem]"
             >
-              <h2 class="h1 mob:h2 text-text_black">
+              <h2 class="animated-element h1 mob:h2 text-text_black">
                 FOR <br />
                 COLLECTORS
               </h2>
               <ul
-                class="flex flex-col gap-[2.65rem] pb-3 pl-[1.875rem] mob:gap-[1.05rem] mob:pb-10"
+                class="flex flex-col gap-[2.65rem] pb-[1.35rem] pl-[1.875rem] mob:gap-[1.05rem] mob:pb-10"
               >
-                <li class="flex flex-col">
-                  <p class="h3 h-[3.625rem] text-text_black">
-                    <span class="pr-[1.475rem]">•</span>LIMITID editions
+                <li class="animated-element flex flex-col">
+                  <p class="h3 h-[3.625rem] text-text_black mob:h-[3.425rem]">
+                    <span class="pr-[1.675rem] text-[2.5rem] text-text_black"
+                      >•</span
+                    >LIMITID editions
                   </p>
-                  <p class="body-light pl-[2.9rem] text-text_black">
-                    Signed, individually numbered editions produced in <br />
-                    museum-quality archival print.
+                  <p class="body-light pl-[2.7rem] text-text_black">
+                    Signed, individually numbered <br class="desk:hidden" />
+                    editions produced in
+                    <br class="mob:hidden" />
+                    museum-<br class="desk:hidden" />uality archival print.
                   </p>
                 </li>
-                <li class="flex flex-col">
+                <li class="animated-element flex flex-col">
                   <p class="h3 text-text_black desk:h-[3.625rem]">
-                    <span class="pr-[1.475rem]">•</span>Large-Format
+                    <span class="pr-[1.675rem] text-[2.5rem] text-text_black"
+                      >•</span
+                    >Large-Format
                     <span class="mob:pl-[2.6rem]">Editions</span>
                   </p>
-                  <p class="body-light pl-[2.9rem] text-text_black">
+                  <p class="body-light pl-[2.7rem] text-text_black">
                     Statement-scale works created for residential and interior
                     <br class="mob:hidden" />
                     spaces.
                   </p>
                 </li>
               </ul>
-              <div class="mob:flex mob:justify-center">
-                <a href="" class="btn"><span>explore the gallery</span></a>
+              <div class="animated-element mob:flex mob:justify-center">
+                <a
+                  href=""
+                  class="btn px-[1.25rem] py-[1.05rem] mob:px-[2.55rem] mob:py-[0.875rem]"
+                  ><span>explore the gallery</span></a
+                >
               </div>
             </div>
           </div>
@@ -434,39 +530,47 @@
       </div>
       <div class="footer-links-wrapper">
         <ul class="footer-links-ul">
-          <li>
+          <li class="animated-element">
             <a href="" class="footer-link text-text_black">collaboration</a>
           </li>
-          <li>
+          <li class="animated-element">
             <a href="" class="footer-link text-text_black"
               >Trade / Interior Designers</a
             >
           </li>
-          <li>
+          <li class="animated-element">
             <a href="" class="footer-link text-text_black">Limited Editions</a>
           </li>
         </ul>
         <ul class="footer-links-ul">
-          <li>
+          <li class="animated-element">
             <a href="" class="footer-link text-text_black"
               >Shipping & Delivery</a
             >
           </li>
-          <li><a href="" class="footer-link text-text_black">CONTACT</a></li>
-          <li>
+          <li class="animated-element">
+            <a href="" class="footer-link text-text_black">CONTACT</a>
+          </li>
+          <li class="animated-element">
             <a href="" class="footer-link text-text_black"
               >Care / Framing Guide</a
             >
           </li>
-          <li>
+          <li class="animated-element">
             <a href="" class="footer-link text-text_black">HOW WE PRINT</a>
           </li>
         </ul>
       </div>
-      <p class="footer-year text-white">© 2026, Franz Wertvollen</p>
+      <p class="footer-year animated-element text-white">
+        © 2026, Franz Wertvollen
+      </p>
     </footer>
-    <script src="./mob-slider.js"></script>
-    <script src="./main-page-2section-slider.js"></script>
-    <script src="./burger-menu.js"></script>
+    <script src="./script/mob-slider.js"></script>
+    <script src="./script/main-page-2section-slider.js"></script>
+    <script src="./script/burger-menu-hidden-header.js"></script>
+
+    <script src="./script/animated-element.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/lenis@1.3.8/dist/lenis.min.js"></script>
+    <script src="./script/lenis-smooth-scroll.js"></script>
   </body>
 </html>

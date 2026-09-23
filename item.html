@@ -4,9 +4,6 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./style.css" />
-    <link href="../node_modules/pixel-glass/styles.css" rel="stylesheet" />
-    <script src="../node_modules/pixel-glass/script.js"></script>
-    <!-- // Pixel Glass -->
     <style>
       html {
         font-size: calc(-0.005825242718446644rem + 1.087378640776699vw);
@@ -28,25 +25,49 @@
   </head>
   <body>
     <header class="header">
-      <div class="header__inner">
-        <a href="/" class="header__logo" aria-label="Paintings">
-          <img
-            src="./assets/img/Paintings/icons/paintings-logo.svg"
-            alt="Paintings"
-          />
+      <div class="header-wrapper">
+        <a href="/" class="header-logo" aria-label="Paintings — home">
+          <img src="./assets/img/Paintings/icons/paintings-logo.svg" alt="" />
         </a>
 
-        <nav class="header__nav" aria-label="Main navigation">
-          <a href="#gallery" class="header__link">GALLERY</a>
-          <a href="#about" class="header__link">ABOUT THE ARTIST</a>
-          <a href="#contact" class="header__link">CONTACT</a>
+        <nav aria-label="Main navigation" class="header-nav-wrapper">
+          <ul class="header-nav-links">
+            <li><a href="#gallery" class="header-link">GALLERY</a></li>
+            <li><a href="#about" class="header-link">ABOUT THE ARTIST</a></li>
+            <li><a href="#contact" class="header-link">CONTACT</a></li>
+          </ul>
+
+          <div class="header-nav-buttons">
+            <button type="button" aria-label="Search">
+              <img
+                src="./assets/img/Paintings/icons/paintings-lense.svg"
+                alt=""
+                class="h-6 w-6"
+              />
+            </button>
+            <a href="" aria-label="Profile">
+              <img
+                src="./assets/img/Paintings/icons/paintings-user.svg"
+                alt=""
+                class="h-6 w-6"
+              />
+            </a>
+            <a href="" aria-label="Shopping cart">
+              <img
+                src="./assets/img/Paintings/icons/paintings-bag.svg"
+                alt=""
+                class="h-6 w-6"
+              />
+            </a>
+          </div>
         </nav>
 
         <button
-          class="header__burger"
+          class="header-burger"
           type="button"
           aria-label="Open menu"
           aria-expanded="false"
+          aria-controls="mobile-menu"
         >
           <span></span>
           <span></span>
@@ -54,16 +75,67 @@
         </button>
       </div>
 
-      <nav class="mobile-menu" aria-label="Mobile navigation">
-        <a href="#gallery" class="mobile-menu__link">GALLERY</a>
-        <a href="#about" class="mobile-menu__link">ABOUT THE ARTIST</a>
-        <a href="#contact" class="mobile-menu__link">CONTACT</a>
+      <!-- Mobile menu -->
+      <nav
+        aria-label="Mobile navigation"
+        class="mobile-menu-wrapper"
+        id="mobile-menu"
+      >
+        <div class="mobile-menu-inner">
+          <ul class="mobile-menu-list">
+            <li>
+              <a href="#gallery" class="mobile-menu-link">
+                <span class="mobile-menu-link-text">GALLERY</span>
+              </a>
+            </li>
+            <li>
+              <a href="#about" class="mobile-menu-link">
+                <span class="mobile-menu-link-text">ABOUT THE ARTIST</span>
+              </a>
+            </li>
+            <li>
+              <a href="#contact" class="mobile-menu-link">
+                <span class="mobile-menu-link-text">CONTACT</span>
+              </a>
+            </li>
+          </ul>
+
+          <!-- Actions: search, profile, cart -->
+          <div class="mobile-menu-actions">
+            <button type="button" class="mobile-action-btn" aria-label="Search">
+              <img
+                src="./assets/img/Paintings/icons/paintings-lense.svg"
+                alt=""
+                class="mobile-action-icon"
+              />
+              <span class="mobile-action-label">Search</span>
+            </button>
+
+            <a href="" class="mobile-action-btn" aria-label="Profile">
+              <img
+                src="./assets/img/Paintings/icons/paintings-user.svg"
+                alt=""
+                class="mobile-action-icon"
+              />
+              <span class="mobile-action-label">Profile</span>
+            </a>
+
+            <a href="" class="mobile-action-btn" aria-label="Shopping cart">
+              <img
+                src="./assets/img/Paintings/icons/paintings-bag.svg"
+                alt=""
+                class="mobile-action-icon"
+              />
+              <span class="mobile-action-label">Cart</span>
+            </a>
+          </div>
+        </div>
       </nav>
     </header>
-    <main>
+    <main class="bg-creamy_white">
       <!--Секция 1-->
       <section
-        class="flex gap-[4.35rem] px-[7.75rem] pb-[7.5rem] pt-[15.15rem] mob:flex-col mob:gap-[2.875rem] mob:px-0 mob:pt-[7.25rem]"
+        class="flex gap-[4.35rem] px-[7.75rem] pb-[7.5rem] pt-[15.15rem] mob:flex-col mob:gap-[2.875rem] mob:px-0 mob:pb-[4.7rem] mob:pt-[7.25rem]"
       >
         <div>
           <img
@@ -79,15 +151,22 @@
         <div>
           <div class="desk:pt-[0.3rem]">
             <div class="flex flex-col gap-[1.05rem] desk:gap-[1.25rem]">
-              <h1 class="h1 mob:h2 text-black mob:px-5 desk:h-[4rem]">
-                Vita Aeterna
-              </h1>
-              <p
-                class="body-heder-light pl-[1.0625rem] uppercase text-black mob:pl-5"
+              <div
+                class="animated-element flex flex-col gap-[1.05rem] desk:gap-[1.25rem]"
               >
-                Limited edition
-              </p>
-              <p class="body-light pl-[1.0625rem] text-black mob:pl-5">
+                <h1 class="h1 mob:h2 text-black mob:px-5 desk:h-[4rem]">
+                  Vita Aeterna
+                </h1>
+                <p
+                  class="body-heder-light pl-[1.0625rem] uppercase text-black mob:pl-5"
+                >
+                  Limited edition
+                </p>
+              </div>
+
+              <p
+                class="animated-element body-light pl-[1.0625rem] text-black mob:pl-5"
+              >
                 A limited-edition fine art print of Franz <br />
                 Wertvollen’s symbolic graphite work <br />
                 exploring memory, fertility, creation, <br />
@@ -97,15 +176,15 @@
 
             <form
               id="product-form"
-              class="flex flex-col pl-[1.0625rem] pt-[4.788rem] mob:px-5 mob:pt-[4.488rem]"
+              class="animated-element flex flex-col pl-[1.0625rem] pt-[4.788rem] mob:px-5 mob:pt-[4.488rem]"
               action="/cart/add"
               method="post"
             >
-              <p class="h3 pb-[0.6rem] text-black">$ 2,400</p>
+              <p class="h3 pb-[0.6rem] text-black mob:pb-[0.4rem]">$ 2,400</p>
 
-              <div class="flex flex-col gap-[0.8rem]">
+              <div class="flex flex-col gap-[0.8rem] mob:gap-[0.6rem]">
                 <!-- Dropdown size -->
-                <div>
+                <div class="">
                   <label for="size" class="label text-black"> Size: </label>
                   <!-- Кастомный dropdown -->
                   <div class="dropdown" id="size">
@@ -126,16 +205,16 @@
                       ></span>
                     </button>
                     <ul class="dropdown-list">
-                      <li class="dropdown-item" data-value="40 x 60 inch">
+                      <li class="dropdown-list-item" data-value="40 x 60 inch">
                         40 x 60 inch
                       </li>
-                      <li class="dropdown-item" data-value="50 x 60 inch">
+                      <li class="dropdown-list-item" data-value="50 x 60 inch">
                         50 x 60 inch
                       </li>
-                      <li class="dropdown-item" data-value="40 x 30 inch">
+                      <li class="dropdown-list-item" data-value="40 x 30 inch">
                         40 x 30 inch
                       </li>
-                      <li class="dropdown-item" data-value="20 x 30 inch">
+                      <li class="dropdown-list-item" data-value="20 x 30 inch">
                         20 x 30 inch
                       </li>
                     </ul>
@@ -145,7 +224,7 @@
                 </div>
 
                 <!-- Dropdown frame -->
-                <div>
+                <div class="">
                   <label for="frame" class="label text-black">
                     Frame finish:
                   </label>
@@ -168,14 +247,18 @@
                       ></span>
                     </button>
                     <ul class="dropdown-list">
-                      <li class="dropdown-item" data-value="Dark red">
+                      <li class="dropdown-list-item" data-value="Dark red">
                         Dark red
                       </li>
-                      <li class="dropdown-item" data-value="Dark golden">
+                      <li class="dropdown-list-item" data-value="Dark golden">
                         Dark golden
                       </li>
-                      <li class="dropdown-item" data-value="Golden">Golden</li>
-                      <li class="dropdown-item" data-value="Brown">Brown</li>
+                      <li class="dropdown-list-item" data-value="Golden">
+                        Golden
+                      </li>
+                      <li class="dropdown-list-item" data-value="Brown">
+                        Brown
+                      </li>
                     </ul>
                     <!-- Скрытый input для отправки значения -->
                     <input
@@ -199,12 +282,12 @@
                 Hand-signed and individually numbered
               </p>
 
-              <button type="submit" class="btn w-full px-[1.25rem]">
+              <button type="submit" class="btn px-5 py-[0.975rem]">
                 <span>ADD TO COLLECTION</span>
               </button>
 
               <div
-                class="body-light flex flex-col gap-[1.5rem] pt-[2.288rem] mob:gap-[1.3rem] mob:pt-[1.888rem]"
+                class="body-light flex flex-col gap-[1.5rem] pt-[2.288rem] mob:gap-[1.4rem] mob:pt-[1.888rem]"
               >
                 <p class="text-black">
                   <span class="body text-black">Printing Process:</span>
@@ -226,12 +309,14 @@
 
       <!--Секция 2-->
       <section
-        class="flex gap-[5.488rem] bg-[url('./assets/img/Paintings/Paintings-item/Paintings-item-2-block-bg.svg')] bg-[size:57.1rem] bg-right bg-no-repeat pb-[6.25rem] pl-[9.763rem] pr-[12.125rem] pt-[5.3rem] mob:flex-col mob:gap-[2.45rem] mob:bg-[url('./assets/img/Paintings/Paintings-item/Paintings-item-2-block-bg-ad.svg')] mob:bg-[size:28.2rem] mob:bg-[0rem_9.2rem] mob:pb-[7.25rem] mob:pl-[2rem] mob:pr-[3.75rem] mob:pt-[4.788rem]"
+        class="flex gap-[5.488rem] bg-[url('./assets/img/Paintings/Paintings-item/Paintings-item-2-block-bg.svg')] bg-[size:57.1rem] bg-right bg-no-repeat pb-[6.25rem] pl-[9.763rem] pr-[12.125rem] pt-[5.3rem] mob:flex-col mob:gap-[2.45rem] mob:bg-[url('./assets/img/Paintings/Paintings-item/Paintings-item-2-block-bg-ad.svg')] mob:bg-[size:28.2rem] mob:bg-[0rem_4.4rem] mob:pb-[2.65rem] mob:pl-[2rem] mob:pr-[3.75rem] mob:pt-0"
       >
-        <h2 class="h1 mob:h2 text-black">
+        <h2
+          class="animated-element h1 mob:h2 text-text_black mob:leading-[4.925rem]"
+        >
           Explore the <span class="text-white">story</span>
         </h2>
-        <p class="body-light">
+        <p class="animated-element body-light text-text_black">
           <span class="body-medium text-black">Vita Aeterna</span> shows life as
           it is: beautiful, <br />
           terrible, absurd. <br />
@@ -245,40 +330,46 @@
 
       <!--Секция 3-->
       <section
-        class="bg-[url('./assets/img/Paintings/Paintings-item/Paintings-item-3-block-bg.svg')] bg-[size:100%_7.238rem] bg-[0rem_9.088rem] bg-no-repeat px-[17.875rem] pb-[7.5rem] pt-[8rem] mob:bg-[url('./assets/img/Paintings/Paintings-item/Paintings-item-3-block-bg-ad.svg')] mob:px-5 mob:pb-[4.5rem] mob:pt-[7.938rem]"
+        class="bg-[url('./assets/img/Paintings/Paintings-item/Paintings-item-3-block-bg.svg')] bg-[size:100%_7.238rem] bg-[0rem_9.088rem] bg-no-repeat px-[17.875rem] pb-[7.5rem] pt-[8rem] mob:bg-[url('./assets/img/Paintings/Paintings-item/Paintings-item-3-block-bg-ad.svg')] mob:bg-[100%_4.538rem] mob:px-5 mob:pb-[0.7rem] mob:pt-[3.338rem]"
       >
         <div
-          class="relative left-[-1.062rem] flex justify-center gap-[0.875rem]"
+          class="animated-element relative left-[-1.062rem] flex justify-center gap-[0.875rem] mob:left-0 mob:justify-normal mob:gap-[0.475rem]"
         >
           <img
             src="./assets/img/Paintings/Paintings-item/Paintings-item-3-block-cite-open.svg"
             alt="“"
-            class="h-4 w-6"
+            class="h-4 w-6 mob:absolute"
           />
-          <h2 class="h2 mob:h3 text-center uppercase text-text_black">
+          <h2
+            class="h2 mob:h3 text-center uppercase text-text_black mob:pl-[0.625rem]"
+          >
             Since the last down of times
           </h2>
         </div>
-        <div class="flex justify-center">
+        <div class="flex justify-center desk:gap-[1.7rem]">
           <div
-            class="body-heder-light flex flex-col gap-[1.45rem] pl-10 text-center uppercase leading-[1.175rem] tracking-[5%] mob:gap-[1.35rem] mob:pt-[1.575rem]"
+            class="body-heder-light flex flex-col gap-[1.45rem] pl-[2.7563rem] text-center uppercase leading-[1.175rem] tracking-[5%] mob:gap-[1.35rem] mob:pt-[1.575rem] mob:tracking-[0.0313rem]"
           >
-            <p class="text-text_black">there is an abyss,</p>
-            <p class="text-text_black">an appetite, a power,</p>
-            <p class="text-text_black">
+            <p class="animated-element text-text_black">there is an abyss,</p>
+            <p class="animated-element text-text_black">
+              an appetite, a power,
+            </p>
+            <p class="animated-element text-text_black">
               a small dish of spacetime to season and devour –
             </p>
-            <p class="text-text_black">
+            <p class="animated-element text-text_black">
               all that together gave itself a rather frugal name of God.
             </p>
             <p
-              class="pt-[1.1rem] leading-[1.2rem] text-text_black mob:pt-[1.3rem]"
+              class="animated-element pt-[1.1rem] leading-[1.2rem] text-text_black mob:pt-[1.3rem]"
             >
               From “Genesis Fairytales”<br />
               a poem by Franz Wertvollen
             </p>
           </div>
-          <div class="pl-[1.875rem] pt-[6.625rem]">
+          <div
+            class="animated-element pl-[1.875rem]z shrink-0 pt-[6.625rem] mob:flex mob:justify-end mob:pl-[1.1875rem] mob:pt-[9.0625rem]"
+          >
             <img
               src="assets/img/Paintings/Paintings-item/Paintings-item-3-block-cite-close.svg"
               alt="”"
@@ -290,10 +381,10 @@
 
       <!--Секция 4-->
       <section
-        class="bg-[url('./assets/img/Paintings/Paintings-item/Paintings-item-4-block-bg.svg')] bg-contain bg-[0rem_38.188rem] bg-no-repeat mob:bg-[url('./assets/img/Paintings/Paintings-item/Paintings-item-4-block-bg-ad.svg')] mob:bg-[0rem_78.188rem] desk:px-[8.2813rem]"
+        class="bg-[url('./assets/img/Paintings/Paintings-item/Paintings-item-4-block-bg.svg')] bg-contain bg-[0rem_38.188rem] bg-no-repeat mob:bg-[url('./assets/img/Paintings/Paintings-item/Paintings-item-4-block-bg-ad.svg')] mob:bg-[0rem_77.688rem] desk:px-[8.2813rem]"
       >
         <div
-          class="flex justify-center gap-[5.925rem] pr-[13.075rem] pt-6 mob:flex-col mob:gap-10 mob:py-10 mob:pb-[5.8rem] mob:pr-0"
+          class="flex justify-center gap-[5.925rem] pr-[13.075rem] pt-6 mob:flex-col mob:gap-10 mob:py-10 mob:pb-[3.3rem] mob:pr-0"
         >
           <div
             class="h-[38.5rem] w-[38.5rem] mob:h-[28.125rem] mob:w-[28.125rem]"
@@ -306,8 +397,8 @@
           </div>
 
           <div class="mob:px-5 desk:pt-[12.338rem]">
-            <h2 class="h2 h-[4.8rem]">MEANING</h2>
-            <p class="body-light text-text_black">
+            <h2 class="h2 animated-element h-[4.8rem]">MEANING</h2>
+            <p class="body-light animated-element text-text_black">
               Sic est vita aeterna in gloria et <br />
               miseria (lat.) <br />
               — Such is eternal life, in all its glory <br />
@@ -321,8 +412,10 @@
           <div
             class="flex flex-col justify-center mob:px-5 desk:pb-[1.3125rem]"
           >
-            <h2 class="h2 h-[5.1rem] text-right text-white">Symbols</h2>
-            <p class="body-light text-right text-text_black">
+            <h2 class="animated-element h2 h-[5.1rem] text-right text-white">
+              Symbols
+            </h2>
+            <p class="body-light animated-element text-right text-text_black">
               The elongated blossoms <br />
               deliberately evoke phallic forms, an ancient <br />
               symbol of fertility, creation, and the <br class="mob:hidden" />
@@ -346,8 +439,10 @@
           <div
             class="flex flex-col justify-center mob:px-5 desk:pt-[0.9375rem]"
           >
-            <h2 class="h2 h-[4.8rem]">FERTILITY</h2>
-            <p class="body-light text-text_black">
+            <h2 class="h2 animated-element h-[4.8rem] text-text_black">
+              FERTILITY
+            </h2>
+            <p class="body-light animated-element text-text_black">
               Concealed within the painting <br />
               is a symbol of feminine fertility, <br />
               repeated seven times. Can you find <br />
@@ -358,47 +453,53 @@
       </section>
 
       <!--Секция 5-->
-      <section class="py-20 mob:pt-[6rem]">
-        <h2 class="h1 mob:h2 pl-[13.75rem] text-text_black mob:pl-5">
+      <section class="py-20 mob:pt-[1rem]">
+        <h2
+          class="animated-element h1 mob:h2 pl-[13.75rem] text-text_black mob:pl-5"
+        >
           Imagine it...
         </h2>
 
-        <div class="painting-slider relative mob:pt-[0.125rem]">
-          <ul class="painting-slider__track flex gap-[1.125rem]">
+        <div
+          class="animated-element painting-slider relative mob:pt-[0.125rem]"
+        >
+          <ul
+            class="painting-slider__track flex gap-[1.125rem] desk:pt-[0.275rem]"
+          >
             <li
-              class="painting-slider__slide flex h-[38.625rem] shrink-0 mob:h-[29.825rem]"
+              class="painting-slider__slide flex h-[39.725rem] shrink-0 mob:h-[29.825rem]"
             >
               <img
                 src="assets/img/Paintings/Paintings-item/Vita_Aeterna/Vita-Aeterna-5-block-img-1.webp"
                 alt=""
-                class="mob: w-[25.75rem] mob:w-[19.95rem]"
+                class="w-[26.55rem] mob:w-[19.95rem]"
               />
             </li>
 
             <li
-              class="painting-slider__slide flex h-[38.625rem] shrink-0 mob:h-[29.825rem]"
+              class="painting-slider__slide flex h-[39.725rem] shrink-0 mob:h-[29.825rem]"
             >
               <img
                 src="assets/img/Paintings/Paintings-item/Vita_Aeterna/Vita-Aeterna-5-block-img-2.webp"
                 alt=""
-                class="w-[25.75rem] mob:w-[19.95rem]"
+                class="w-[26.55rem] mob:w-[19.95rem]"
               />
             </li>
 
             <li
-              class="painting-slider__slide flex h-[38.625rem] shrink-0 mob:h-[29.825rem]"
+              class="painting-slider__slide flex h-[39.725rem] shrink-0 mob:h-[29.825rem]"
             >
               <img
                 src="assets/img/Paintings/Paintings-item/Vita_Aeterna/Vita-Aeterna-5-block-img-3.webp"
                 alt=""
-                class="w-[58rem] mob:w-[29.825rem]"
+                class="w-[37.1rem] mob:w-[29.825rem]"
               />
             </li>
           </ul>
 
           <button
             type="button"
-            class="btn-next absolute bottom-6 right-0 mob:top-[24.769rem] mob:px-6 mob:py-[0.9375rem]"
+            class="animated-element btn-next absolute bottom-6 right-0 gap-[2.1rem] pl-[1.65rem] pr-[1.55rem] mob:top-[24.769rem] mob:px-6 mob:py-[0.9375rem]"
             aria-label="Следующий слайд"
           >
             <span>NEXT</span>
@@ -422,26 +523,28 @@
 
       <!--Секция 6-->
       <section
-        class="bg-[url('./assets/img/Paintings/Paintings-item/Paintings-item-6-block-bg.svg')] bg-contain bg-[center_5.5rem] bg-no-repeat pb-[5.625rem] pt-[2.8125rem] mob:bg-[url('./assets/img/Paintings/Paintings-item/Paintings-item-6-block-bg-ad.svg')]"
+        class="bg-[url('./assets/img/Paintings/Paintings-item/Paintings-item-6-block-bg.svg')] bg-contain bg-[center_5.5rem] bg-no-repeat pb-[5.625rem] pt-[2.8125rem] mob:bg-[url('./assets/img/Paintings/Paintings-item/Paintings-item-6-block-bg-ad.svg')] mob:bg-[0rem_3.1rem] mob:pb-[2.425rem] mob:pt-[0.2062rem]"
       >
-        <h2 class="mob:h2 h1 pl-[7.5rem] text-text_black mob:pl-5">
+        <h2
+          class="animated-element mob:h2 h1 pl-[7.5rem] text-text_black mob:pl-5"
+        >
           Artwork Details
         </h2>
         <div
-          class="flex justify-center gap-[4.35rem] pb-[4.5rem] pt-[1.5rem] mob:flex-col mob:items-center mob:gap-[3.85rem] mob:pt-10"
+          class="flex justify-center gap-[4.35rem] pb-[4.5rem] pt-[1.5rem] mob:flex-col mob:items-center mob:gap-[3.85rem] mob:pb-[4.8rem] mob:pt-10"
         >
           <div class="flex flex-col">
             <ul
               class="flex w-[19.25rem] flex-col gap-[1.75rem] text-center mob:gap-[1.75rem]"
             >
               <li
-                class="flex h-fit flex-col gap-[0.375rem] mob:mob:gap-[0.175rem]"
+                class="animated-element flex h-fit flex-col gap-[0.375rem] mob:mob:gap-[0.175rem]"
               >
                 <p class="body-medium text-text_black">Size</p>
                 <p class="body-light text-text_black">Choise of three</p>
               </li>
               <li
-                class="gap flex h-fit flex-col gap-[0.375rem] mob:mob:gap-[0.175rem]"
+                class="animated-element gap flex h-fit flex-col gap-[0.375rem] mob:mob:gap-[0.175rem]"
               >
                 <p class="body-medium text-text_black">Limited Edition</p>
                 <p class="body-light text-text_black">
@@ -450,7 +553,7 @@
                 </p>
               </li>
               <li
-                class="gap flex h-fit flex-col gap-[0.375rem] mob:mob:gap-[0.175rem]"
+                class="animated-element gap flex h-fit flex-col gap-[0.375rem] mob:mob:gap-[0.175rem]"
               >
                 <p class="body-medium text-text_black">Printing</p>
                 <p class="body-light text-text_black">
@@ -465,7 +568,7 @@
               class="flex w-[19.25rem] flex-col gap-[1.55rem] text-center mob:gap-[1.75rem]"
             >
               <li
-                class="gap flex h-fit flex-col gap-[0.375rem] mob:mob:gap-[0.175rem]"
+                class="animated-element gap flex h-fit flex-col gap-[0.375rem] mob:mob:gap-[0.175rem]"
               >
                 <p class="body-medium text-text_black">Authentication</p>
                 <p class="body-light text-text_black">
@@ -474,7 +577,7 @@
                 </p>
               </li>
               <li
-                class="gap flex h-fit flex-col gap-[0.375rem] mob:mob:gap-[0.175rem]"
+                class="animated-element gap flex h-fit flex-col gap-[0.375rem] mob:mob:gap-[0.175rem]"
               >
                 <p class="body-medium text-text_black">Signature</p>
                 <p class="body-light text-text_black">
@@ -483,7 +586,7 @@
               </li>
 
               <li
-                class="gap flex h-fit flex-col gap-[0.375rem] mob:mob:gap-[0.175rem]"
+                class="animated-element gap flex h-fit flex-col gap-[0.375rem] mob:mob:gap-[0.175rem]"
               >
                 <p class="body-medium text-text_black">Shipping</p>
                 <p class="body-light text-text_black">Worldwide</p>
@@ -491,30 +594,42 @@
             </ul>
           </div>
         </div>
-        <div class="flex justify-end desk:pr-[7.5rem]">
-          <button class="btn mob:px-5"><span>ADD TO COLLECTION</span></button>
+        <div
+          class="animated-element flex justify-end mob:justify-center desk:pr-[7.5rem]"
+        >
+          <button class="btn px-[1.275rem] py-[0.975rem] mob:px-[1.55rem]">
+            <span>ADD TO COLLECTION</span>
+          </button>
         </div>
       </section>
 
       <!--Секция 7-->
-      <section class="flex mob:flex-col">
+      <section
+        class="flex bg-contain bg-bottom bg-no-repeat mob:flex-col desk:bg-[url('./assets/img/Paintings/Paintings-item/Paintings-item-3-block-bg.svg')]"
+      >
         <img
           src="./assets/img/Paintings/Paintings-item/Paintings-item-7-block-img.webp"
           alt="Franz Wertvollen"
           class="h-[62.525rem] w-[50.488rem] mob:h-[34.75rem] mob:w-[28.125rem]"
         />
         <div
-          class="pb-[14.4063rem] pt-[15.006rem] mob:pb-0 mob:pt-10 desk:ml-[-2.087rem]"
+          class="pb-[9.406rem] pt-[15.006rem] mob:pb-0 mob:pt-10 desk:ml-[-2.087rem]"
         >
-          <h2 class="h1 mob:h2 text-[6.6875rem] text-text_black mob:pl-5">
+          <h2
+            class="animated-element h1 mob:h2 text-[6.6875rem] text-text_black mob:pl-5 mob:tracking-[6.1%]"
+          >
             MEET THE ARTIST
           </h2>
-          <div class="flex flex-col items-end desk:w-[34rem]">
+          <div
+            class="flex flex-col gap-[5.1rem] pb-20 pl-[9.25rem] pt-[5.663rem] mob:gap-[2.3rem] mob:pb-[2.4rem] mob:pl-0 mob:pt-0"
+          >
             <div
-              class="flex flex-col gap-[0.75rem] pb-20 pl-[9.25rem] pt-[5.663rem] mob:pl-5 mob:pr-[7.625rem] mob:pt-6 desk:pr-[5.5rem]"
+              class="flex flex-col gap-[0.75rem] pr-[15.725rem] mob:pl-5 mob:pr-[7.625rem] mob:pt-[1.338rem]"
             >
-              <h3 class="h3">Franz Wertvollen</h3>
-              <p class="body-light">
+              <h3 class="h3 animated-element text-text_black">
+                Franz Wertvollen
+              </h3>
+              <p class="body-light animated-element text-text_blackk">
                 Writer, philosopher, and visual artist Franz Wertvollen creates
                 symbolic works rooted in the same world as his literature —
                 where fictional characters, mythology, legend, and philosophy
@@ -522,98 +637,117 @@
               </p>
             </div>
 
-            <a
-              href=""
-              class="btn-arrow flex text-white mob:justify-center mob:py-2"
-              ><span>READ MORE</span>
-              <svg
-                class="h-[0.5rem] w-[7.125rem] mob:hidden"
-                viewBox="0 0 114 8"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M113.354 4.03556C113.549 3.8403 113.549 3.52372 113.354 3.32845L110.172 0.146473C109.976 -0.0487893 109.66 -0.0487893 109.464 0.146473C109.269 0.341735 109.269 0.658318 109.464 0.85358L112.293 3.68201L109.464 6.51043C109.269 6.7057 109.269 7.02228 109.464 7.21754C109.66 7.4128 109.976 7.4128 110.172 7.21754L113.354 4.03556ZM0 3.68201L0 4.18201L113 4.18201V3.68201V3.18201L0 3.18201L0 3.68201Z"
-                />
-              </svg>
-              <svg
-                class="desk:hidden"
-                width="1.75rem"
-                height="0.5rem"
-                viewBox="0 0 28 8"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M27.3536 4.03544C27.5488 3.84018 27.5488 3.52359 27.3536 3.32833L24.1716 0.146351C23.9763 -0.0489113 23.6597 -0.0489113 23.4645 0.146351C23.2692 0.341613 23.2692 0.658195 23.4645 0.853458L26.2929 3.68188L23.4645 6.51031C23.2692 6.70557 23.2692 7.02216 23.4645 7.21742C23.6597 7.41268 23.9763 7.41268 24.1716 7.21742L27.3536 4.03544ZM0 3.68188L0 4.18188L27 4.18188V3.68188V3.18188L0 3.18188L0 3.68188Z"
-                  fill="white"
-                />
-              </svg>
-            </a>
+            <div
+              class="animated-element flex justify-center desk:justify-start"
+            >
+              <a
+                href=""
+                class="btn flex px-[1.15rem] py-[0.875rem] text-white mob:justify-center mob:px-[6.85rem] mob:py-[0.9rem]"
+                ><span>READ MORE</span>
+              </a>
+            </div>
           </div>
         </div>
       </section>
 
       <!--Секция 8-->
-      <section class="py-[7.5rem]">
-        <h2 class="h1 mob:h2 pl-[7.5rem] mob:pl-5">Explore other works</h2>
-        <div
-          class="flex justify-center bg-[url('./assets/img/Paintings/Paintings-item/Paintings-item-8-block-bg.svg')] bg-contain bg-[center_24.1rem] bg-no-repeat pt-[4.25rem] mob:bg-[url('./assets/img/Paintings/Paintings-item/Paintings-item-8-block-bg-ad.svg')] mob:pt-10"
+      <section class="pb-[7.5rem] pt-[7.9rem] mob:pb-[4.9rem] mob:pt-0">
+        <h2
+          class="animated-element h1 mob:h2 pl-[7.5rem] text-text_black mob:pl-5"
         >
-          <ul class="flex gap-4 mob:flex-col">
-            <li>
-              <a href=""
-                ><img
-                  src="./assets/img/Paintings/Paintings-item/Paintings-item-8-block-Nani.webp"
-                  alt=""
-                  class="h-[25.488rem] w-[19.063rem] mob:h-[33.4375rem] mob:w-[25.125rem]"
-              /></a>
-            </li>
-            <li>
-              <a href=""
-                ><img
-                  src="./assets/img/Paintings/Paintings-item/Paintings-item-8-block-Medusa.webp"
-                  alt=""
-                  class="h-[25.488rem] w-[18.538rem] mob:h-[34.625rem] mob:w-[25.125rem]"
-              /></a>
-            </li>
-            <li>
-              <a href=""
-                ><img
-                  src="./assets/img/Paintings/Paintings-item/Paintings-item-8-block-Pannochka.webp"
-                  alt=""
-                  class="h-[25.488rem] w-[20.25rem] mob:h-[31.4375rem] mob:w-[25.125rem]"
-              /></a>
-            </li>
-          </ul>
+          Explore other works
+        </h2>
+
+        <!-- Мобильный слайдер -->
+        <div class="animated-element pt-5 desk:hidden">
+          <div
+            id="paintings-carousel"
+            class="relative mx-auto w-full overflow-hidden"
+          >
+            <ul id="paintings-track" class="relative h-[28.5rem] w-full">
+              <li class="painting-slide absolute left-1/2 top-0 w-[29.75rem]">
+                <div class="h-[26.388rem] w-[29.75rem]">
+                  <img
+                    src="./assets/img/Paintings/Paintings-item/Paintings-item-8-block-Medusa.webp"
+                    alt="Sibilla"
+                    class="h-full w-full object-contain"
+                  />
+                </div>
+              </li>
+
+              <li class="painting-slide absolute left-1/2 top-0 w-[29.75rem]">
+                <div class="h-[26.388rem] w-[29.75rem]">
+                  <img
+                    src="./assets/img/Paintings/Paintings-item/Paintings-item-8-block-Nani.webp"
+                    alt="Gerhard"
+                    class="h-full w-full object-contain"
+                  />
+                </div>
+              </li>
+
+              <li class="painting-slide absolute left-1/2 top-0 w-[29.75rem]">
+                <div class="h-[26.388rem] w-[29.75rem]">
+                  <img
+                    src="./assets/img/Paintings/Paintings-item/Paintings-item-8-block-Pannochka.webp"
+                    alt="Sibilla"
+                    class="h-full w-full object-contain"
+                  />
+                </div>
+              </li>
+            </ul>
+          </div>
+          <div class="flex w-full justify-center pt-6">
+            <div
+              class="btn flex w-[25.65rem] justify-center pb-[0.8rem] pt-[1.2rem]"
+            >
+              <a href="" class="flex text-white mob:justify-center"
+                ><span>TRAVEL</span>
+              </a>
+            </div>
+          </div>
         </div>
-        <div class="flex justify-center pt-6">
-          <a href="" class="btn-arrow flex text-white mob:justify-center"
-            ><span>TRAVEL</span>
-            <svg
-              class="h-[0.5rem] w-[7.125rem] mob:hidden"
-              viewBox="0 0 114 8"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
+
+        <!-- Десктопный слайдер -->
+        <div class="animated-element mob:hidden">
+          <div
+            class="flex justify-center bg-[url('./assets/img/Paintings/Paintings-item/Paintings-item-8-block-bg.svg')] bg-[size:63rem] bg-[center_14.4rem] bg-no-repeat pt-[3.95rem] mob:bg-[url('./assets/img/Paintings/Paintings-item/Paintings-item-8-block-bg-ad.svg')] mob:pt-[1.2rem]"
+          >
+            <ul class="flex gap-4 mob:flex-col">
+              <li>
+                <a href=""
+                  ><img
+                    src="./assets/img/Paintings/Paintings-item/Paintings-item-8-block-Nani.webp"
+                    alt=""
+                    class="h-[25.388rem] w-[19.063rem] mob:h-[33.4375rem] mob:w-[25.125rem]"
+                /></a>
+              </li>
+              <li>
+                <a href=""
+                  ><img
+                    src="./assets/img/Paintings/Paintings-item/Paintings-item-8-block-Medusa.webp"
+                    alt=""
+                    class="h-[25.388rem] w-[18.538rem] mob:h-[34.625rem] mob:w-[25.125rem]"
+                /></a>
+              </li>
+              <li>
+                <a href=""
+                  ><img
+                    src="./assets/img/Paintings/Paintings-item/Paintings-item-8-block-Pannochka.webp"
+                    alt=""
+                    class="h-[25.388rem] w-[20.25rem] mob:h-[31.4375rem] mob:w-[25.125rem]"
+                /></a>
+              </li>
+            </ul>
+          </div>
+          <div class="flex w-full justify-center pt-6">
+            <div
+              class="btn flex w-[8.25rem] justify-center pb-[0.8rem] pt-[1.2rem]"
             >
-              <path
-                d="M113.354 4.03556C113.549 3.8403 113.549 3.52372 113.354 3.32845L110.172 0.146473C109.976 -0.0487893 109.66 -0.0487893 109.464 0.146473C109.269 0.341735 109.269 0.658318 109.464 0.85358L112.293 3.68201L109.464 6.51043C109.269 6.7057 109.269 7.02228 109.464 7.21754C109.66 7.4128 109.976 7.4128 110.172 7.21754L113.354 4.03556ZM0 3.68201L0 4.18201L113 4.18201V3.68201V3.18201L0 3.18201L0 3.68201Z"
-              />
-            </svg>
-            <svg
-              class="desk:hidden"
-              width="1.75rem"
-              height="0.5rem"
-              viewBox="0 0 28 8"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M27.3536 4.03544C27.5488 3.84018 27.5488 3.52359 27.3536 3.32833L24.1716 0.146351C23.9763 -0.0489113 23.6597 -0.0489113 23.4645 0.146351C23.2692 0.341613 23.2692 0.658195 23.4645 0.853458L26.2929 3.68188L23.4645 6.51031C23.2692 6.70557 23.2692 7.02216 23.4645 7.21742C23.6597 7.41268 23.9763 7.41268 24.1716 7.21742L27.3536 4.03544ZM0 3.68188L0 4.18188L27 4.18188V3.68188V3.18188L0 3.18188L0 3.68188Z"
-                fill="white"
-              />
-            </svg>
-          </a>
+              <a href="" class="flex text-white mob:justify-center"
+                ><span>TRAVEL</span>
+              </a>
+            </div>
+          </div>
         </div>
       </section>
     </main>
@@ -628,92 +762,50 @@
       </div>
       <div class="footer-links-wrapper">
         <ul class="footer-links-ul">
-          <li>
+          <li class="animated-element">
             <a href="" class="footer-link text-text_black">collaboration</a>
           </li>
-          <li>
+          <li class="animated-element">
             <a href="" class="footer-link text-text_black"
               >Trade / Interior Designers</a
             >
           </li>
-          <li>
+          <li class="animated-element">
             <a href="" class="footer-link text-text_black">Limited Editions</a>
           </li>
         </ul>
         <ul class="footer-links-ul">
-          <li>
+          <li class="animated-element">
             <a href="" class="footer-link text-text_black"
               >Shipping & Delivery</a
             >
           </li>
-          <li><a href="" class="footer-link text-text_black">CONTACT</a></li>
-          <li>
+          <li class="animated-element">
+            <a href="" class="footer-link text-text_black">CONTACT</a>
+          </li>
+          <li class="animated-element">
             <a href="" class="footer-link text-text_black"
               >Care / Framing Guide</a
             >
           </li>
-          <li>
+          <li class="animated-element">
             <a href="" class="footer-link text-text_black">HOW WE PRINT</a>
           </li>
         </ul>
       </div>
-      <p class="footer-year text-white">© 2026, Franz Wertvollen</p>
+      <p class="footer-year animated-element text-white">
+        © 2026, Franz Wertvollen
+      </p>
     </footer>
 
-    <script src="./Imagine-it-slider.js"></script>
-    <script src="./burger-menu.js"></script>
-    <script src="./dropdown.js"></script>
+    <script src="./script/burger-menu-hidden-header.js"></script>
+    <script src="./script/dropdown.js"></script>
 
-    <!--Добавление сообщения об ошибке в select-->
-    <script>
-      const form = document.querySelector('#product-form');
-      const selects = form.querySelectorAll('.dropdown');
+    <script src="./script/Imagine-it-slider.js"></script>
+    <script src="./script/mob-slider.js"></script>
 
-      function validateSelect(select) {
-        const error = document.querySelector(`#${select.id}-error`);
-
-        if (!select.value) {
-          select.classList.add('select-field--error');
-          select.setAttribute('aria-invalid', 'true');
-
-          if (error) {
-            error.hidden = false;
-          }
-
-          return false;
-        }
-
-        select.classList.remove('select-field--error');
-        select.removeAttribute('aria-invalid');
-
-        if (error) {
-          error.hidden = true;
-        }
-
-        return true;
-      }
-
-      selects.forEach((select) => {
-        select.addEventListener('change', () => {
-          validateSelect(select);
-        });
-      });
-
-      form.addEventListener('submit', (event) => {
-        let isFormValid = true;
-
-        selects.forEach((select) => {
-          const isSelectValid = validateSelect(select);
-
-          if (!isSelectValid) {
-            isFormValid = false;
-          }
-        });
-
-        if (!isFormValid) {
-          event.preventDefault();
-        }
-      });
-    </script>
+    <script src="./script/animated-element.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/lenis@1.3.8/dist/lenis.min.js"></script>
+    <script src="./script/lenis-smooth-scroll.js"></script>
   </body>
 </html>
